@@ -2,6 +2,7 @@
 <html>
   <head>
     <title>RailsDailyFantasyLineupBuilder</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
     <%= csrf_meta_tags %>
 
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
@@ -9,8 +10,49 @@
   </head>
 
   <body>
+    <div class="container well-lg">
+
+  <% if user_signed_in? %>
+
+  <div class="navbar-wrapper">
+    <div class="container">
+        <div class="navbar navbar-static-top" role="navigation">
+        <div class="container full-width">
+         <div class="navbar-collapse collapse">
+            <ul class="nav navbar-nav navbar-left">
+                <li><a href="/users/<%= current_user.id %>">View Your Lineups</a></li>
+                <li><a href="/lineups"> All Lineups </a></li>
+                <li><a href="/lineups/new"> Create Lineup </a></li>
+                <li><%= link_to("Sign Out", destroy_user_session_path, :method => 'delete') %></li>
+            </ul>
+         </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+    <% else %>
+
+    <div class="navbar-wrapper">
+      <div class="container">
+        <div class="navbar navbar-static-top" role="navigation">
+          <div class="container full-width">
+           <div class="navbar-collapse collapse">
+              <ul class="nav navbar-nav navbar-left">
+                  <li><%= link_to("Sign Up", new_user_registration_path) %></li>
+                  <li><%= link_to('Login', new_user_session_path)  %></li>
+              </ul>
+           </div>
+          </div>
+         </div>
+      </div>
+    </div>
+
+  <%end %>
     <p class="notice"><%= notice %></p>
     <p class="alert"><%= alert %></p>
     <%= yield %>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"></script>
   </body>
 </html>
