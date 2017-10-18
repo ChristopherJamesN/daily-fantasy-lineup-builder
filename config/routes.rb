@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  resources :players
   resources :lineups
   devise_for :users
   root to: "home#index"

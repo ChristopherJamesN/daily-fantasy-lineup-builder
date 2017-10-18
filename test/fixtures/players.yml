@@ -1,0 +1,15 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  name: MyString
+  position: MyString
+  projectedPoints: 1
+  actualPoints: 1
+  lineup_id: 1
+
+two:
+  name: MyString
+  position: MyString
+  projectedPoints: 1
+  actualPoints: 1
+  lineup_id: 1
