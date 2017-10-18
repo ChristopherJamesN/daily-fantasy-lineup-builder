@@ -1,0 +1,37 @@
+<%= form_with(model: lineup, local: true) do |form| %>
+  <% if lineup.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(lineup.errors.count, "error") %> prohibited this lineup from being saved:</h2>
+
+      <ul>
+      <% lineup.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= form.label :name %>
+    <%= form.text_field :name, id: :lineup_name %>
+  </div>
+
+  <div class="field">
+    <%= form.label :description %>
+    <%= form.text_field :description, id: :lineup_description %>
+  </div>
+
+  <div class="field">
+    <%= form.label :user_id %>
+    <%= form.number_field :user_id, id: :lineup_user_id %>
+  </div>
+
+  <div class="field">
+    <%= form.label :player_id %>
+    <%= form.number_field :player_id, id: :lineup_player_id %>
+  </div>
+
+  <div class="actions">
+    <%= form.submit %>
+  </div>
+<% end %>

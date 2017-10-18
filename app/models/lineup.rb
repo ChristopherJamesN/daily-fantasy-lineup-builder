@@ -1,0 +1,2 @@
+class Lineup < ApplicationRecord
+end
