@@ -4,6 +4,7 @@ class LineupsController < ApplicationController
   # GET /lineups
   # GET /lineups.json
   def index
+    authenticate_user!
     @lineups = Lineup.all
   end
 
