@@ -25,6 +25,8 @@ class LineupsController < ApplicationController
   # POST /lineups.json
   def create
     @lineup = Lineup.new(lineup_params)
+    @lineup.user_id = current_user.id
+    current_user.lineups << @lineup
 
     respond_to do |format|
       if @lineup.save
@@ -69,6 +71,6 @@ class LineupsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def lineup_params
-      params.require(:lineup).permit(:name, :description, :user_id, :player_id)
+      params.require(:lineup).permit(:name, :description)
     end
 end
