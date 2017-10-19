@@ -23,6 +23,8 @@
   </td>
 </p>
 
-<%= link_to 'Edit', edit_lineup_path(@lineup) %> |
+<% if @lineup.user_id == current_user.id %>
+  <%= link_to 'Edit', edit_lineup_path(@lineup) %> |
+<% end %>
 <%= link_to 'Back', lineups_path %>
 </div>
