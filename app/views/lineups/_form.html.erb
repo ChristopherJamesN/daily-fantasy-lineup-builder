@@ -21,6 +21,17 @@
     <%= form.text_field :description, id: :lineup_description %>
   </div>
 
+  <div class="field">
+    <%= form.fields_for :players, lineup.players.build do |players_fields| %>
+      <%= players_fields.text_field :name %>
+      <%= players_fields.text_field :position %>
+      <%= players_fields.number_field :projectedPoints %>
+      <%= players_fields.number_field :actualPoints %>
+    <% end %>
+</div>
+
+  #Add the ability to add an exisiting player or create a new one here.
+
   <div class="actions">
     <%= form.submit %>
   </div>
