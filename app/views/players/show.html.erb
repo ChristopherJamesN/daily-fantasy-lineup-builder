@@ -19,8 +19,10 @@
 </p>
 
 <p>
-  <strong>Lineup:</strong>
-  <%= @player.lineup_id %>
+  <strong>Lineups:</strong>
+  <% @player.lineups.each do |lineup| %>
+    <%= lineup.name %>
+  <% end %>
 </p>
 
 <%= link_to 'Edit', edit_player_path(@player) %> |
