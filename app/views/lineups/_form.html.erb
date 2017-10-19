@@ -21,16 +21,6 @@
     <%= form.text_field :description, id: :lineup_description %>
   </div>
 
-  <div class="field">
-    <%= form.label :quarterback %>
-    <%= form.fields_for :players, lineup.players.build do |players_fields| %>
-      <%= players_fields.text_field :name %>
-      <%= players_fields.text_field :position %>
-      <%= players_fields.text_field :projectedPoints %>
-      <%= players_fields.text_field :actualPoints %>
-    <% end %>
-  </div>
-
   <div class="actions">
     <%= form.submit %>
   </div>
