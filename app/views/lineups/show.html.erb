@@ -19,6 +19,7 @@
   <td><% @lineup.players.each do |player| %>
       <%= player.name %>
       <% end %>
+      <%= link_to 'See Players', lineup_players_path(@lineup.id) %>
   </td>
 </p>
 
