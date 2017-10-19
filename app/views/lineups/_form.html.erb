@@ -11,22 +11,23 @@
     </div>
   <% end %>
 
-  <div class="field">
+  <div class="form-group modal-sm">
     <%= form.label :name %>
-    <%= form.text_field :name, id: :lineup_name %>
+    <%= form.text_field :name, id: :lineup_name, class: 'form-control' %>
   </div>
 
-  <div class="field">
+  <div class="form-group modal-sm">
     <%= form.label :description %>
-    <%= form.text_field :description, id: :lineup_description %>
+    <%= form.text_field :description, id: :lineup_description, class: 'form-control' %>
   </div>
 
-  <div class="field">
+  <div class="form-group modal-sm">
     <%= form.fields_for :players, lineup.players.build do |players_fields| %>
-      <%= players_fields.text_field :name %>
-      <%= players_fields.text_field :position %>
-      <%= players_fields.number_field :projectedPoints %>
-      <%= players_fields.number_field :actualPoints %>
+      <%= form.label :quarterback %>
+      <%= players_fields.text_field :name, placeholder: 'Name', class: 'form-control' %>
+      <%= players_fields.text_field :position, value: 'Quarterback', class: 'form-control'%>
+      <%= players_fields.number_field :projectedPoints, placeholder: 'Projected Points', class: 'form-control' %>
+      <%= players_fields.number_field :actualPoints, placeholder: 'Actual Points', class: 'form-control' %>
     <% end %>
 </div>
 
