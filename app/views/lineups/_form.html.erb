@@ -25,7 +25,7 @@
     <%= form.label :quarterback %>
     <%= form.collection_select :player_ids, Player.where(position: 'Quarterback'), :id, :name, class: 'form-control' %>
     <%= form.fields_for :players, lineup.players.build do |players_fields| %>
-      <%= players_fields.text_field :name, placeholder: 'QB1', class: 'form-control' %>
+      <%= players_fields.text_field :name, value: 'QB1', class: 'form-control' %>
       <%= players_fields.text_field :position, value: 'Quarterback', class: 'form-control'%>
       <%= players_fields.number_field :projectedPoints, placeholder: 'Projected Points', class: 'form-control' %>
       <%= players_fields.number_field :actualPoints, placeholder: 'Actual Points', class: 'form-control' %>
