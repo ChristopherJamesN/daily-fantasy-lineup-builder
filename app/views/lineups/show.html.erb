@@ -16,7 +16,10 @@
 
 <p>
   <strong>Players:</strong>
-  <%= @lineup.players %>
+  <td><% @lineup.players.each do |player| %>
+      <%= player.name %>
+      <% end %>
+  </td>
 </p>
 
 <%= link_to 'Edit', edit_lineup_path(@lineup) %> |

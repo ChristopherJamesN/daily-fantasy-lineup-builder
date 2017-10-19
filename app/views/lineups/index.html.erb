@@ -16,7 +16,10 @@
       <tr>
         <td><%= lineup.name %></td>
         <td><%= lineup.description %></td>
-        <td><%= lineup.players %></td>
+        <td><% lineup.players.each do |player| %>
+            <%= player.name %>
+            <% end %>
+        </td>
         <td><%= link_to 'Show', lineup %></td>
         <td><%= link_to 'Edit', edit_lineup_path(lineup) %></td>
         <td><%= link_to 'Destroy', lineup, method: :delete, data: { confirm: 'Are you sure?' } %></td>
