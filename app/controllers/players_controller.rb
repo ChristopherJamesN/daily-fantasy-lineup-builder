@@ -4,12 +4,17 @@ class PlayersController < ApplicationController
   # GET /players
   # GET /players.json
   def index
-    @players = Player.all
+    if params[:lineup_id]
+      @players = Lineup.find(params[:lineup_id]).players
+    else
+      @players = Player.all
+    end
   end
 
   # GET /players/1
   # GET /players/1.json
   def show
+    @lineup = Lineup.find(params[:id])
   end
 
   # GET /players/new
