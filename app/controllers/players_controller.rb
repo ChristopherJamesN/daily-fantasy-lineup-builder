@@ -24,7 +24,7 @@ class PlayersController < ApplicationController
   # POST /players
   # POST /players.json
   def create
-    authenticate_user
+    authenticate_user!
     @player = Player.new(player_params)
 
     respond_to do |format|
@@ -41,6 +41,7 @@ class PlayersController < ApplicationController
   # PATCH/PUT /players/1
   # PATCH/PUT /players/1.json
   def update
+    authenticate_user!
     respond_to do |format|
       if @player.update(player_params)
         format.html { redirect_to @player, notice: 'Player was successfully updated.' }
@@ -55,6 +56,7 @@ class PlayersController < ApplicationController
   # DELETE /players/1
   # DELETE /players/1.json
   def destroy
+    authenticate_user!
     @player.destroy
     respond_to do |format|
       format.html { redirect_to players_url, notice: 'Player was successfully destroyed.' }
