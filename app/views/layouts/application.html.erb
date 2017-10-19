@@ -20,7 +20,6 @@
         <div class="container full-width">
          <div class="navbar-collapse collapse">
             <ul class="nav navbar-nav navbar-left">
-                <li><a href="/users/<%= current_user.id %>">View Your Lineups</a></li>
                 <li><a href="/lineups"> All Lineups </a></li>
                 <li><a href="/lineups/new"> Create Lineup </a></li>
                 <li><%= link_to("Sign Out", destroy_user_session_path, :method => 'delete') %></li>
