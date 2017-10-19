@@ -42,13 +42,20 @@ class LineupsController < ApplicationController
   # PATCH/PUT /lineups/1
   # PATCH/PUT /lineups/1.json
   def update
-    respond_to do |format|
-      if @lineup.update(lineup_params)
-        format.html { redirect_to @lineup, notice: 'Lineup was successfully updated.' }
-        format.json { render :show, status: :ok, location: @lineup }
-      else
-        format.html { render :edit }
-        format.json { render json: @lineup.errors, status: :unprocessable_entity }
+    if @lineup.user_id == current_user.id
+      respond_to do |format|
+        if @lineup.update(lineup_params)
+          format.html { redirect_to @lineup, notice: 'Lineup was successfully updated.' }
+          format.json { render :show, status: :ok, location: @lineup }
+        else
+          format.html { render :edit }
+          format.json { render json: @lineup.errors, status: :unprocessable_entity }
+        end
+      end
+    else
+      respond_to do |format|
+        format.html { redirect_to @lineup, notice: 'Sorry, you cannot edit a lineup you did not create.' }
+        format.json { head :no_content }
       end
     end
   end
@@ -56,10 +63,17 @@ class LineupsController < ApplicationController
   # DELETE /lineups/1
   # DELETE /lineups/1.json
   def destroy
-    @lineup.destroy
-    respond_to do |format|
-      format.html { redirect_to lineups_url, notice: 'Lineup was successfully destroyed.' }
-      format.json { head :no_content }
+    if @lineup.user_id == current_user.id
+      @lineup.destroy
+      respond_to do |format|
+        format.html { redirect_to lineups_url, notice: 'Lineup was successfully destroyed.' }
+        format.json { head :no_content }
+      end
+    else
+      respond_to do |format|
+        format.html { redirect_to lineups_url, notice: 'You cannot destroy a lineup you did not create.' }
+        format.json { head :no_content }
+      end
     end
   end
 
