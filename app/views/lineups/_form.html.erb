@@ -23,7 +23,12 @@
 
   <div class="field">
     <%= form.label :quarterback %>
-    <%= form.collection_check_boxes :player_ids, Player.all, :id, :name %>
+    <%= form.fields_for :players, lineup.players.build do |players_fields| %>
+      <%= players_fields.text_field :name %>
+      <%= players_fields.text_field :position %>
+      <%= players_fields.text_field :projectedPoints %>
+      <%= players_fields.text_field :actualPoints %>
+    <% end %>
   </div>
 
   <div class="actions">
