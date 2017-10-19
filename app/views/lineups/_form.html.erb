@@ -23,8 +23,9 @@
 
   <div class="form-group modal-sm">
     <%= form.label :quarterback %>
-    <%= form.collection_select :player_ids, Player.where(position: 'Quarterback'), :id, :name, class: 'form-control' %>
-    <%= form.fields_for :players, lineup.players.build do |players_fields| %>
+    Choose existing quarterback: <%= form.collection_select :player_ids, Player.where(position: 'Quarterback'), :id, :name, class: 'form-control' %>
+    <br></br>
+    Or create a new quarterback: <%= form.fields_for :players, lineup.players.build do |players_fields| %>
       <%= players_fields.text_field :name, value: 'QB1', class: 'form-control' %>
       <%= players_fields.text_field :position, value: 'Quarterback', class: 'form-control'%>
       <%= players_fields.number_field :projectedPoints, placeholder: 'Projected Points', class: 'form-control' %>
@@ -34,8 +35,9 @@
 
   <div class="form-group modal-sm">
     <%= form.label :runningback %>
-    <%= form.collection_select :player_ids, Player.where(position: 'Runningback'), :id, :name, class: 'form-control' %>
-    <%= form.fields_for :players, lineup.players.build do |players_fields| %>
+    Choose existing running back: <%= form.collection_select :player_ids, Player.where(position: 'Runningback'), :id, :name, class: 'form-control' %>
+    <br></br>
+    Or create a new running back:<%= form.fields_for :players, lineup.players.build do |players_fields| %>
       <%= players_fields.text_field :name, value: 'RB1', class: 'form-control' %>
       <%= players_fields.text_field :position, value: 'Runningback', class: 'form-control'%>
       <%= players_fields.number_field :projectedPoints, placeholder: 'Projected Points', class: 'form-control' %>
@@ -45,8 +47,9 @@
 
   <div class="form-group modal-sm">
     <%= form.label :widereciever %>
-    <%= form.collection_select :player_ids, Player.where(position: 'Widereciever'), :id, :name, class: 'form-control' %>
-    <%= form.fields_for :players, lineup.players.build do |players_fields| %>
+    Choose existing widereceiver: <%= form.collection_select :player_ids, Player.where(position: 'Widereciever'), :id, :name, class: 'form-control' %>
+    <br></br>
+    Or create a new widereciever<%= form.fields_for :players, lineup.players.build do |players_fields| %>
       <%= players_fields.text_field :name, value: 'WR1', class: 'form-control' %>
       <%= players_fields.text_field :position, value: 'Widereciever', class: 'form-control'%>
       <%= players_fields.number_field :projectedPoints, placeholder: 'Projected Points', class: 'form-control' %>
@@ -56,8 +59,9 @@
 
   <div class="form-group modal-sm">
     <%= form.label :defense %>
-    <%= form.collection_select :player_ids, Player.where(position: 'Defense'), :id, :name, class: 'form-control' %>
-    <%= form.fields_for :players, lineup.players.build do |players_fields| %>
+    Choose existing defense: <%= form.collection_select :player_ids, Player.where(position: 'Defense'), :id, :name, class: 'form-control' %>
+    <br></br>
+    Or create a new defense: <%= form.fields_for :players, lineup.players.build do |players_fields| %>
       <%= players_fields.text_field :name, value: 'D1', class: 'form-control' %>
       <%= players_fields.text_field :position, value: 'Defense', class: 'form-control'%>
       <%= players_fields.number_field :projectedPoints, placeholder: 'Projected Points', class: 'form-control' %>
