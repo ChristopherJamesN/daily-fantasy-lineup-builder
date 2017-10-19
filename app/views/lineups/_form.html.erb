@@ -21,6 +21,11 @@
     <%= form.text_field :description, id: :lineup_description %>
   </div>
 
+  <div class="field">
+    <%= form.label :quarterback %>
+    <%= form.collection_check_boxes :player_ids, Player.all, :id, :name %>
+  </div>
+
   <div class="actions">
     <%= form.submit %>
   </div>

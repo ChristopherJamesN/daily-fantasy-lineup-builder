@@ -24,10 +24,8 @@ class LineupsController < ApplicationController
   # POST /lineups
   # POST /lineups.json
   def create
-    @lineup = Lineup.new(lineup_params)
-    @lineup.user_id = current_user.id
-    current_user.lineups << @lineup
-
+    authenticate_user!
+    @lineup = current_user.lineups.build(lineup_params)
     respond_to do |format|
       if @lineup.save
         format.html { redirect_to @lineup, notice: 'Lineup was successfully created.' }

@@ -24,6 +24,7 @@ class PlayersController < ApplicationController
   # POST /players
   # POST /players.json
   def create
+    authenticate_user
     @player = Player.new(player_params)
 
     respond_to do |format|
@@ -69,6 +70,6 @@ class PlayersController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def player_params
-      params.require(:player).permit(:name, :position, :projectedPoints, :actualPoints, :lineup_id)
+      params.require(:player).permit(:name, :position, :projectedPoints, :actualPoints)
     end
 end
