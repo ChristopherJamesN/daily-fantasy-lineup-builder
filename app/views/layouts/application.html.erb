@@ -10,7 +10,7 @@
   </head>
 
   <body>
-    <div class="container well-lg">
+  <div class="container well-lg">
 
   <% if user_signed_in? %>
 
@@ -52,7 +52,8 @@
   <%= content_tag(:div, flash[:error], :id => "flash_error") if flash[:error] %>
   <%= content_tag(:div, flash[:notice], :id => "flash_notice") if flash[:notice] %>
   <%= content_tag(:div, flash[:alert], :id => "flash_alert") if flash[:alert] %>
-    <%= yield %>
+  <%= yield %>
+</div>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"></script>
   </body>
