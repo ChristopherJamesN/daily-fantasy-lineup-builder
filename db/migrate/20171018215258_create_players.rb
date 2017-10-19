@@ -5,7 +5,6 @@ class CreatePlayers < ActiveRecord::Migration[5.1]
       t.string :position
       t.integer :projectedPoints
       t.integer :actualPoints
-      t.integer :lineup_id
 
       t.timestamps
     end

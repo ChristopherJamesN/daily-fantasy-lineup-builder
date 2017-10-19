@@ -4,7 +4,6 @@ class CreateLineups < ActiveRecord::Migration[5.1]
       t.string :name
       t.string :description
       t.integer :user_id
-      t.integer :player_id
 
       t.timestamps
     end
