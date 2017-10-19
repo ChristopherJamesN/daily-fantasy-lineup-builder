@@ -1,0 +1,11 @@
+<p>
+  <strong>Email Address: </strong>
+  <%= @user.email %>
+</p>
+
+<p>
+  <strong>Your Lineups:</strong>
+  <% @user.lineups.each do |lineup| %>
+    <%= link_to lineup.name, lineup_path(lineup.id) %>
+  <% end %>
+</p>
