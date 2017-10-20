@@ -4,6 +4,11 @@
 </p>
 
 <p>
+  <strong>Most Used Player: </strong>
+  <%= @user.lineups.most_used_player %>
+</p>
+
+<p>
   <strong>Your Lineups:</strong>
   <% @user.lineups.each do |lineup| %>
     <%= link_to lineup.name, lineup_path(lineup.id) %>
