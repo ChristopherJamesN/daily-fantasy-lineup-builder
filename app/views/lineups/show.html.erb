@@ -20,6 +20,7 @@
       <%= player.name %>
       <% end %>
       <%= link_to 'See Players', lineup_players_path(@lineup.id) %>
+      <%= link_to 'Add New Player', new_lineup_player_path(@lineup.id) %>
   </td>
 </p>
 

@@ -1,7 +1,7 @@
 Rails.application.routes.draw do
   resources :players
   resources :lineups do
-    resources :players, only: [:show, :index]
+    resources :players, only: [:index, :new]
   end
   devise_for :users
   get '/users/show', to: 'users#show'
