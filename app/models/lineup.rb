@@ -21,4 +21,6 @@ class Lineup < ApplicationRecord
     return Player.maximum("lineup_id")
   end
 
+  #todo: update this method
+
 end
