@@ -16,7 +16,6 @@ ActiveRecord::Schema.define(version: 20171020003257) do
     t.string "name"
     t.string "description"
     t.integer "user_id"
-    t.integer "player_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
@@ -31,7 +30,6 @@ ActiveRecord::Schema.define(version: 20171020003257) do
     t.string "position"
     t.integer "projectedPoints"
     t.integer "actualPoints"
-    t.integer "lineup_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
