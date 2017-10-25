@@ -4,6 +4,7 @@ class Lineup < ApplicationRecord
   has_many :lineups_players
   has_many :players, through: :lineups_players
   accepts_nested_attributes_for :players
+  scope :this_weeks_lineups, -> { where("DATE(created_at) > ?", (Date.today).to_time - 7.days) }
 
   def players_attributes=(player_attributes)
     player_attributes.values.each do |player_attribute|
@@ -20,10 +21,17 @@ class Lineup < ApplicationRecord
   end
 
   def self.most_used_player
-    most_used = LineupsPlayer.maximum("player_id")
-    return Player.find(most_used).name
+    max = 0
+    most_used = ''
+    Player.all.each do |player|
+      if player.lineups.length > max
+        max = player.lineups.length
+        most_used = player.name
+      elsif player.lineups.length == max
+        most_used = most_used + ' ' + player.name
+      end
+    end
+    return most_used
   end
-
-  #todo: update this method
 
 end
