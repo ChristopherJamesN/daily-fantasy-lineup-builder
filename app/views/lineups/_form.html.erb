@@ -23,7 +23,6 @@
 
   <div class="form-group modal-sm">
     <%= form.label :quarterback %>
-    List of existing quarterbacks: <%= form.collection_select :player_ids, Player.where(position: 'Quarterback'), :id, :name, class: 'form-control', :readonly => true%>
     <br></br>
     Enter Quarterback details here: <%= form.fields_for :players, lineup.players.build do |players_fields| %>
       <%= players_fields.text_field :name, placeholder: 'Name (Required)', class: 'form-control' %>
@@ -35,7 +34,6 @@
 
   <div class="form-group modal-sm">
     <%= form.label :runningback %>
-    List of existing runningbacks: <%= form.collection_select :player_ids, Player.where(position: 'Runningback'), :id, :name, class: 'form-control', :readonly => true%>
     <br></br>
       Enter Runningback details here: <%= form.fields_for :players, lineup.players.build do |players_fields| %>
       <%= players_fields.text_field :name, placeholder: 'Name (Required)', class: 'form-control' %>
@@ -47,7 +45,6 @@
 
   <div class="form-group modal-sm">
     <%= form.label :widereciever %>
-    List of existing widereceivers: <%= form.collection_select :player_ids, Player.where(position: 'Widereciever'), :id, :name, class: 'form-control', :readonly => true %>
     <br></br>
     Enter Widereciever details here: <%= form.fields_for :players, lineup.players.build do |players_fields| %>
       <%= players_fields.text_field :name, placeholder: 'Name (Required)', class: 'form-control' %>
@@ -59,7 +56,6 @@
 
   <div class="form-group modal-sm">
     <%= form.label :defense %>
-    List of existing defenses: <%= form.collection_select :player_ids, Player.where(position: 'Defense'), :id, :name, class: 'form-control', :readonly => true %>
     <br></br>
     Enter Defense details here: <%= form.fields_for :players, lineup.players.build do |players_fields| %>
       <%= players_fields.text_field :name, placeholder: 'Name (Required)', class: 'form-control' %>
