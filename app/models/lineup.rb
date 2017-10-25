@@ -20,7 +20,7 @@ class Lineup < ApplicationRecord
   end
 
   def self.most_used_player
-    return Player.maximum("lineup_id")
+    return Player.maximum("lineups")
   end
 
   #todo: update this method
