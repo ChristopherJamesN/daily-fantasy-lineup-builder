@@ -5,7 +5,7 @@ class LineupsController < ApplicationController
   # GET /lineups.json
   def index
     authenticate_user!
-    @lineups = Lineup.all
+    @lineups = Lineup.where(user_id: current_user.id)
   end
 
   # GET /lineups/1
