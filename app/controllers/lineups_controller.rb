@@ -65,7 +65,7 @@ class LineupsController < ApplicationController
     if @lineup.user_id == current_user.id
       @lineup.destroy
       respond_to do |format|
-        format.html { redirect_to lineups_url, notice: 'Lineup was successfully destroyed.' }
+        format.html { redirect_to lineups_url, notice: 'Lineup was successfully deleted.' }
         format.json { head :no_content }
       end
     else
