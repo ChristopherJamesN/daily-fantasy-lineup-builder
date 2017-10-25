@@ -3,7 +3,6 @@ class Lineup < ApplicationRecord
   belongs_to :user
   has_many :lineups_players
   has_many :players, through: :lineups_players
-  accepts_nested_attributes_for :players
   scope :this_weeks_lineups, -> { where("DATE(created_at) > ?", (Date.today).to_time - 7.days) }
 
   def players_attributes=(player_attributes)
