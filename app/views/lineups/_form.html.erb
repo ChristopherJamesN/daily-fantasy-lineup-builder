@@ -27,7 +27,7 @@
     <br></br>
     Or create a new quarterback: <%= form.fields_for :players, lineup.players.build do |players_fields| %>
       <%= players_fields.text_field :name, value: 'QB1', class: 'form-control' %>
-      <%= players_fields.text_field :position, value: 'Quarterback', class: 'form-control'%>
+      <%= players_fields.text_field :position, value: 'Quarterback', class: 'form-control', :readonly => true%>
       <%= players_fields.number_field :projectedPoints, placeholder: 'Projected Points', class: 'form-control' %>
       <%= players_fields.number_field :actualPoints, placeholder: 'Actual Points', class: 'form-control' %>
     <% end %>
@@ -39,7 +39,7 @@
     <br></br>
     Or create a new running back:<%= form.fields_for :players, lineup.players.build do |players_fields| %>
       <%= players_fields.text_field :name, value: 'RB1', class: 'form-control' %>
-      <%= players_fields.text_field :position, value: 'Runningback', class: 'form-control'%>
+      <%= players_fields.text_field :position, value: 'Runningback', class: 'form-control', :readonly => true%>
       <%= players_fields.number_field :projectedPoints, placeholder: 'Projected Points', class: 'form-control' %>
       <%= players_fields.number_field :actualPoints, placeholder: 'Actual Points', class: 'form-control' %>
     <% end %>
@@ -51,7 +51,7 @@
     <br></br>
     Or create a new widereciever<%= form.fields_for :players, lineup.players.build do |players_fields| %>
       <%= players_fields.text_field :name, value: 'WR1', class: 'form-control' %>
-      <%= players_fields.text_field :position, value: 'Widereciever', class: 'form-control'%>
+      <%= players_fields.text_field :position, value: 'Widereciever', class: 'form-control', :readonly => true%>
       <%= players_fields.number_field :projectedPoints, placeholder: 'Projected Points', class: 'form-control' %>
       <%= players_fields.number_field :actualPoints, placeholder: 'Actual Points', class: 'form-control' %>
     <% end %>
@@ -63,7 +63,7 @@
     <br></br>
     Or create a new defense: <%= form.fields_for :players, lineup.players.build do |players_fields| %>
       <%= players_fields.text_field :name, value: 'D1', class: 'form-control' %>
-      <%= players_fields.text_field :position, value: 'Defense', class: 'form-control'%>
+      <%= players_fields.text_field :position, value: 'Defense', class: 'form-control', :readonly => true%>
       <%= players_fields.number_field :projectedPoints, placeholder: 'Projected Points', class: 'form-control' %>
       <%= players_fields.number_field :actualPoints, placeholder: 'Actual Points', class: 'form-control' %>
     <% end %>
