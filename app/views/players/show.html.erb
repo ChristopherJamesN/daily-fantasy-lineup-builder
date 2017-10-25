@@ -21,7 +21,9 @@
 <p>
   <strong>Lineups:</strong>
   <% @player.lineups.each do |lineup| %>
-    <%= lineup.name %>
+    <% if lineup.user_id == current_user.id %>
+      <%= lineup.name %>
+    <% end %>
   <% end %>
 </p>
 
