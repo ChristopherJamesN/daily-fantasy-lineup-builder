@@ -1,7 +1,7 @@
 class PlayersController < ApplicationController
   before_action :set_player, only: [:show, :edit, :update, :destroy]
 
-  # GET /players
+  # GET /players or GET lineups/id:/players if linking from a lineup show page.
   # GET /players.json
   def index
     if params[:lineup_id]
@@ -17,7 +17,7 @@ class PlayersController < ApplicationController
   def show
   end
 
-  # GET /players/new
+  # GET /players/new or GET lineups/id:/players/new if linking from a lineup show page.
   def new
     @player = Player.new
   end
