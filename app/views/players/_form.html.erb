@@ -33,7 +33,7 @@
 
   <div class="field">
     <%= form.label :lineup %>
-    <%= form.collection_select :lineup_ids, Lineup.where(user_id: current_user.id), :id, :name, class: 'form-control' %>
+    <%= form.collection_check_boxes :lineup_ids, Lineup.where(user_id: current_user.id), :id, :name, class: 'form-control' %>
   </div>
 
   <div class="actions">
