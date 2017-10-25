@@ -62,9 +62,9 @@ class PlayersController < ApplicationController
   # DELETE /players/1.json
   def destroy
     authenticate_user!
-    @player.destroy
+    @player.lineups_players.delete
     respond_to do |format|
-      format.html { redirect_to players_url, notice: 'Player was successfully destroyed.' }
+      format.html { redirect_to players_url, notice: 'Player was successfully removed from lineup.' }
       format.json { head :no_content }
     end
   end
