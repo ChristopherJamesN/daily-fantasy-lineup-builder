@@ -9,7 +9,9 @@ class Lineup < ApplicationRecord
     player_attributes.values.each do |player_attribute|
       if Player.find_by(name: player_attribute[:name])
         player = Player.find_by(name: player_attribute[:name])
-        self.players << player
+        if !self.players.include?(player)
+          self.players << player
+        end
       else
         player = Player.create(player_attribute)
         self.players << player
