@@ -6,6 +6,7 @@ class PlayersController < ApplicationController
   def index
     if params[:lineup_id]
       @players = Lineup.find(params[:lineup_id]).players
+      @lineup = Lineup.find(params[:lineup_id])
     else
       @players = Player.all
     end
