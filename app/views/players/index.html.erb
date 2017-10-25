@@ -21,7 +21,7 @@
         <td><%= link_to 'Show', player %></td>
         <% if @lineup != nil %>
           <td><%= link_to 'Edit', edit_player_path(player) %></td>
-          <td><%= link_to 'Delete from Lineup', player, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+          <td><%= link_to 'Delete', player, method: :delete, data: { confirm: 'Are you sure?' } %></td>
         <% end %>
       </tr>
     <% end %>
