@@ -34,8 +34,11 @@
   <div class="field">
     <%= form.label :lineup %>
     <%= form.collection_check_boxes :lineup_ids, Lineup.where(user_id: current_user.id), :id, :name, class: 'form-control' %>
-    <%= form.fields_for :lineups_players do |lineups_players_fields| %>
-      <%= lineups_players_fields.select :player_starting, class: 'form-control' %>
+  </div>
+
+  <div class="field">
+    <%= fields_for :lineups_players do |f| %>
+      <%= f.collection_check_boxes :player_starting, LineupsPlayer.where(player_id: player.id), :id, :player_starting, class: 'form-control' %>
     <% end %>
   </div>
 
