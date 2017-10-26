@@ -1,0 +1,44 @@
+<%= form_with(model: lineup, local: true) do |form| %>
+  <% if lineup.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(lineup.errors.count, "error") %> prohibited this lineup from being saved:</h2>
+
+      <ul>
+      <% lineup.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="form-group modal-sm">
+    <%= form.label :name %>
+    <%= form.text_field :name, id: :lineup_name, class: 'form-control' %>
+  </div>
+
+  <div class="form-group modal-sm">
+    <%= form.label :description %>
+    <%= form.text_field :description, id: :lineup_description, class: 'form-control' %>
+  </div>
+
+  <p>
+    <strong>Players:</strong>
+    <br></br>
+    <td><% lineup.players.each do |player| %>
+          <%= player.name %>
+          <%= link_to 'Edit Player', edit_player_path(player.id) %>
+          <br></br>
+        <% end %>
+        <% if lineup.user_id == current_user.id %>
+          <br></br>
+          <%= link_to 'See Players', lineup_players_path(@lineup.id) %>
+          <br>
+          <%= link_to 'Add New Player', new_lineup_player_path(@lineup.id) %>
+        <% end %>
+    </td>
+  </p>
+
+  <div class="actions">
+    <%= form.submit %>
+  </div>
+<% end %>
