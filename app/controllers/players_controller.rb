@@ -15,6 +15,7 @@ class PlayersController < ApplicationController
   # GET /players/1
   # GET /players/1.json
   def show
+    @lineups_players = LineupsPlayer.where(player_id: @player.id)
   end
 
   # GET /players/new or GET lineups/id:/players/new if linking from a lineup show page.
