@@ -23,7 +23,7 @@ ActiveRecord::Schema.define(version: 20171020003257) do
   create_table "lineups_players", force: :cascade do |t|
     t.integer "lineup_id"
     t.integer "player_id"
-    t.string "player_comment"
+    t.boolean "player_starting", default: true
   end
 
   create_table "players", force: :cascade do |t|
