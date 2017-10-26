@@ -24,7 +24,8 @@
   <% @player.lineups.each do |lineup| %>
     <% if lineup.user_id == current_user.id %>
       <%= lineup.name %>
-      <%= @lineups_players.find_by(lineup_id: lineup.id).player_starting %>
+      <br>
+      Player Notes: <%= @lineups_players.find_by(lineup_id: lineup.id).player_starting %>
       <br>
     <% end %>
   <% end %>
