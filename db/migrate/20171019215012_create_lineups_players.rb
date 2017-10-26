@@ -3,6 +3,8 @@ class CreateLineupsPlayers < ActiveRecord::Migration[5.1]
     create_table :lineups_players do |t|
       t.integer :lineup_id
       t.integer :player_id
+      t.string :player_comment
+
     end
   end
 end
