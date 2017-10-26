@@ -21,22 +21,34 @@
     <%= form.text_field :description, id: :lineup_description, class: 'form-control' %>
   </div>
 
-  <p>
+  <table class="table">
+    <thead>
+      <tr>
+        <th>Name</th>
+        <th>Position</th>
+        <th>Edit</th>
+        <th colspan="3"></th>
+      </tr>
+    </thead>
     <strong>Players:</strong>
     <br></br>
-    <td><% lineup.players.each do |player| %>
-          <%= player.name %>
-          <%= link_to 'Edit Player', edit_player_path(player.id) %>
-          <br></br>
+    <tbody>
+    <% lineup.players.each do |player| %>
+      <tr>
+          <td><%= player.name %></td>
+          <td><%= player.position %></td>
+          <td><%= link_to 'Edit Player', edit_player_path(player.id) %></td>
         <% end %>
+      </tr>
+    </tbody>
+  </table>
         <% if lineup.user_id == current_user.id %>
           <br></br>
           <%= link_to 'See Players', lineup_players_path(@lineup.id) %>
           <br>
           <%= link_to 'Add New Player', new_lineup_player_path(@lineup.id) %>
         <% end %>
-    </td>
-  </p>
+
 
   <div class="actions">
     <%= form.submit %>
