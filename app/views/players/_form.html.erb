@@ -37,13 +37,10 @@
   </div>
 
   <div class="field">
-    <% player.lineups.each do |lineup| %>
       <%= form.fields_for :lineups_players do |lineups_player_fields| %>
-        <%= lineup.name %>
-        <%= lineups_player_fields.select :player_starting, ['Starting', 'Benched', 'Injured']%>
-        <%= lineups_player_fields.hidden_field :lineup_id, :value => lineup.id %>
+        <%= lineups_player_fields.select :player_starting, ['Starting', 'Benched', 'Injured'] %>
+        <%= lineups_player_fields.collection_select :lineup_id, Lineup.where(id: player.lineups.ids), :id, :name, :readonly => true%>
         <br>
-      <% end %>
     <% end %>
   </div>
 

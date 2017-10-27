@@ -6,7 +6,6 @@ class Player < ApplicationRecord
   has_many :lineups, through: :lineups_players
 
   accepts_nested_attributes_for :lineups
-  accepts_nested_attributes_for :lineups_players
 
   def lineups_players_attributes=(lineups_player_attributes)
     lineups_player_attributes.values.each do |lineups_player_attribute|
