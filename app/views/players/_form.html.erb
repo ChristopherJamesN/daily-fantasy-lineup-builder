@@ -37,10 +37,13 @@
   </div>
 
   <div class="field">
-    <%= fields_for :lineups_players do |f| %>
-      <%= f.label :player_starting %>
-      <%= f.text_field :player_starting %>
-    <% end %>
+    <% player.lineups.each do |lineups| %>
+      <%= form.fields_for :lineups do |lineup_fields| %>
+        <%= lineup_fields.fields_for :lineups_players do |players_fields| %>
+          <%= players_fields.select :player_starting, ['Starting', 'Benched', 'Injured']%>
+          <% end %>
+        <% end %>
+      <% end %>
   </div>
 
   <div class="actions">
