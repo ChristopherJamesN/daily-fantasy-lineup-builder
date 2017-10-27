@@ -16,8 +16,11 @@
 
 <p>
   <strong>Players:</strong>
+  <br>
   <td><% @lineup.players.each do |player| %>
       <%= player.name %>
+      <%= LineupsPlayer.find_by(player_id: player.id, lineup_id: @lineup.id).player_starting %>
+      <br>
       <% end %>
       <% if @lineup.user_id == current_user.id %>
         <br></br>
