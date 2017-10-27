@@ -38,8 +38,8 @@
 
   <div class="field">
       <%= form.fields_for :lineups_players do |lineups_player_fields| %>
-        <%= lineups_player_fields.select :player_starting, ['Starting', 'Benched', 'Injured'] %>
-        <%= lineups_player_fields.collection_select :lineup_id, Lineup.where(id: player.lineups.ids), :id, :name, :readonly => true%>
+        Player Status: <%= lineups_player_fields.select :player_starting, ['Starting', 'Benched', 'Injured'] %>
+        <%= lineups_player_fields.collection_select :lineup_id, Lineup.where(id: player.lineups.ids[lineups_player_fields.index]), :id, :name%>
         <br>
     <% end %>
   </div>
