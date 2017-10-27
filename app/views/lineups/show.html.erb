@@ -17,18 +17,32 @@
 <p>
   <strong>Players:</strong>
   <br>
-  <td><% @lineup.players.each do |player| %>
-      <%= player.name %>
-      <%= LineupsPlayer.find_by(player_id: player.id, lineup_id: @lineup.id).player_starting %>
-      <br>
+
+  <table class="table" id="myTable">
+    <thead>
+      <tr>
+        <th onclick="sortTable(0)">Name</th>
+        <th onclick="sortTable(1)">Status</th>
+        <th colspan="1"></th>
+      </tr>
+    </thead>
+
+    <tbody>
+  <% @lineup.players.each do |player| %>
+    <tr>
+      <td><%= player.name %></td>
+      <td><%= LineupsPlayer.find_by(player_id: player.id, lineup_id: @lineup.id).player_starting %></td>
+    </tr>
       <% end %>
+    </tbody>
+  </table>
+
       <% if @lineup.user_id == current_user.id %>
         <br></br>
         <%= link_to 'See Players', lineup_players_path(@lineup.id) %>
         <br>
         <%= link_to 'Add New Player', new_lineup_player_path(@lineup.id) %>
       <% end %>
-  </td>
 </p>
 
 <% if @lineup.user_id == current_user.id %>
@@ -36,3 +50,42 @@
 <% end %>
 <%= link_to 'Back', lineups_path %>
 </div>
+
+<script>
+function sortTable(n) {
+  var table, rows, switching, i, x, y, shouldSwitch, dir, switchcount = 0;
+  table = document.getElementById("myTable");
+  switching = true;
+  dir = "asc";
+  while (switching) {
+    switching = false;
+    rows = table.getElementsByTagName("TR");
+    for (i = 1; i < (rows.length - 1); i++) {
+      shouldSwitch = false;
+      x = rows[i].getElementsByTagName("TD")[n];
+      y = rows[i + 1].getElementsByTagName("TD")[n];
+      if (dir == "asc") {
+        if (x.innerHTML.toLowerCase() > y.innerHTML.toLowerCase()) {
+          shouldSwitch= true;
+          break;
+        }
+      } else if (dir == "desc") {
+        if (x.innerHTML.toLowerCase() < y.innerHTML.toLowerCase()) {
+          shouldSwitch= true;
+          break;
+        }
+      }
+    }
+    if (shouldSwitch) {
+      rows[i].parentNode.insertBefore(rows[i + 1], rows[i]);
+      switching = true;
+      switchcount ++;
+    } else {
+      if (switchcount == 0 && dir == "asc") {
+        dir = "desc";
+        switching = true;
+      }
+    }
+  }
+}
+</script>
