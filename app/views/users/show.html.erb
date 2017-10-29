@@ -10,14 +10,18 @@
 
 <p>
   <strong>Your Lineups for This Week:</strong>
+  <br>
   <% @this_weeks_lineups.each do |lineup| %>
     <%= link_to lineup.name, lineup_path(lineup.id) %>
+    <br>
   <% end %>
 </p>
 
 <p>
   <strong>All Your Lineups:</strong>
+  <br>
   <% @user.lineups.each do |lineup| %>
     <%= link_to lineup.name, lineup_path(lineup.id) %>
+    <br>
   <% end %>
 </p>
