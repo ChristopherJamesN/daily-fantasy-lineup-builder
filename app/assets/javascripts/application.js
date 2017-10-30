@@ -13,3 +13,6 @@
 //= require rails-ujs
 //= require turbolinks
 //= require_tree .
+//= require lineupshow
+//= require jquery
+//= require jquery_ujs
