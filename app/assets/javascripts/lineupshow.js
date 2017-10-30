@@ -4,9 +4,12 @@ function attachListeners() {
     lineupsButton.addEventListener('click', function () {
       $.ajax({
         method: 'GET',
-        url: '/lineups',
+        url: '/lineups.json',
         success: function(response) {
-          new_html = response.data;
+          let new_html = ''
+          for (var i = 0; i < response.data.length; i++) {
+            new_html += response.data[i].attributes.name
+          }
           window.document.getElementById('lineups').innerHTML = new_html;
         }
       });
