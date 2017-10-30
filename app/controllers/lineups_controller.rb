@@ -6,6 +6,10 @@ class LineupsController < ApplicationController
   def index
     authenticate_user!
     @lineups = Lineup.where(user_id: current_user.id)
+    respond_to do |format|
+      format.html { render :index }
+      format.json { render json: @lineups}
+    end
   end
 
   # GET /lineups/1
