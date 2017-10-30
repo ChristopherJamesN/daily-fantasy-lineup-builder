@@ -6,6 +6,7 @@
     <tr>
       <th>Name</th>
       <th>Description</th>
+      <th>Total Points</th>
       <th>Players</th>
       <th colspan="3"></th>
     </tr>
@@ -16,6 +17,7 @@
       <tr>
         <td><%= lineup.name %></td>
         <td><%= lineup.description %></td>
+        <td><%= lineup.total_points %></td>
         <td><% lineup.players.each do |player| %>
             <%= player.name %>
             <% end %>

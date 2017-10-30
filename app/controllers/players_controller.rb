@@ -32,6 +32,7 @@ class PlayersController < ApplicationController
   def create
     authenticate_user!
     @player = Player.new(player_params)
+    #Useful for performance in large applications versus .create.
 
     respond_to do |format|
       if @player.save

@@ -33,4 +33,14 @@ class Lineup < ApplicationRecord
     return most_used
   end
 
+  def total_points
+    points = 0
+      self.players.each do |player|
+        if player.actualPoints != nil
+          points += player.actualPoints
+        end
+      end
+    points
+  end
+
 end
