@@ -1,6 +1,6 @@
 <div class="container well-lg">
 
-  <button id="next">Show Next Lineup</button>
+  <button onclick="nextLineup()">Show Next Lineup</button>
   <br></br>
 <p>
   <strong id="name">Name:</strong>
@@ -40,12 +40,12 @@
     </tbody>
   </table>
 
-      <% if @lineup.user_id == current_user.id %>
-        <br></br>
-        <%= link_to 'See Players', lineup_players_path(@lineup.id) %>
-        <br>
-        <%= link_to 'Add New Player', new_lineup_player_path(@lineup.id) %>
-      <% end %>
+  <% if @lineup.user_id == current_user.id %>
+    <br></br>
+    <%= link_to 'See Players', lineup_players_path(@lineup.id) %>
+    <br>
+    <%= link_to 'Add New Player', new_lineup_player_path(@lineup.id) %>
+  <% end %>
 </p>
 
 <% if @lineup.user_id == current_user.id %>

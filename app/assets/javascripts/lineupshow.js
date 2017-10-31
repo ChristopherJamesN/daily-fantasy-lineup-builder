@@ -1,37 +1,30 @@
-function attachListeners() {
-
-  const lineupsButton = window.document.getElementById('showLineups');
-    lineupsButton.addEventListener('click', function () {
-      $.ajax({
-        method: 'GET',
-        url: '/lineups.json',
-        success: function(response) {
-          let new_html = ''
-          for (var i = 0; i < response.data.length; i++) {
-            new_html += response.data[i].attributes.name + '<br>' + response.data[i].attributes.description + '</br>'
-          }
-          window.document.getElementById('lineups').innerHTML = new_html;
-        }
-      });
-    });
-
-  const nextButton = window.document.getElementById('next');
-  nextButton.addEventListener('click', function () {
-    var id = @lineup.id
+function showLineups() {
     $.ajax({
       method: 'GET',
-      url: '/lineups/' + id + '.json',
+      url: '/lineups.json',
       success: function(response) {
-        new_html += response.data[0].attributes.name
-        window.document.getElementById('name').innerHTML = new_html;
+        let new_html = response
+        for (var i = 0; i < response.length; i++) {
+          new_html += response[i].name + '<br>' + response[i].description + '</br>'
+        }
+        window.document.getElementById('lineups').innerHTML = new_html;
       }
     });
   });
-}
 
-window.onload = () => {
-  attachListeners();
-}
+function nextLineup() {
+  var id = @lineup.id
+  $.ajax({
+    method: 'GET',
+    url: '/lineups/' + id + '.json',
+    success: function(response) {
+      new_html += response.data[0].attributes.name
+      window.document.getElementById('name').innerHTML = new_html;
+    }
+  });
+});
+
+
 
 function sortTable(n) {
   var table, rows, switching, i, x, y, shouldSwitch, dir, switchcount = 0;
