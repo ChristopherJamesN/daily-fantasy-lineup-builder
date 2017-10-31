@@ -4,11 +4,18 @@ function nextLineup() {
     method: 'GET',
     url: '/lineups/' + nextId + '.json',
     success: function(response) {
+
+     let player_html = ''
+     for (var i = 0; i < response.data.attributes.players.length; i++) {
+        player_html += '<tr><td>' + response.data.attributes.players[i].name + '</td><td>' + response.data.attributes.players[i].position +'</td></tr>'
+      }
+
       window.document.getElementById('name').innerHTML = response.data.attributes.name
       window.document.getElementById('description').innerHTML = response.data.attributes.description
       window.document.getElementById('user').innerHTML = response.data.attributes.user.id
       window.document.getElementById('next').setAttribute('data-id', response.data.id)
       window.document.getElementById('previous').setAttribute('data-id', response.data.id)
+      window.document.getElementById('tableBody').innerHTML = player_html
     }
   });
 }
