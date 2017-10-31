@@ -1,8 +1,8 @@
-function nextLineup() {
-  var nextId = parseInt(window.document.getElementById('next').getAttribute('data-id')) + 1
+function previousLineup() {
+  var previousId = parseInt(window.document.getElementById('previous').getAttribute('data-id')) - 1
   $.ajax({
     method: 'GET',
-    url: '/lineups/' + nextId + '.json',
+    url: '/lineups/' + previousId + '.json',
     success: function(response) {
       window.document.getElementById('name').innerHTML = response.data.attributes.name
       window.document.getElementById('description').innerHTML = response.data.attributes.description
