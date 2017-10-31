@@ -1,6 +1,6 @@
 <div class="container well-lg">
 
-  <button onclick="nextLineup(<%= @lineup.id %>)">Show Next Lineup</button>
+  <button id="next" data-id="<%= @lineup.id %>" onclick="nextLineup()">Show Next Lineup</button>
   <br></br>
 <p>
   <strong>Name:</strong>
