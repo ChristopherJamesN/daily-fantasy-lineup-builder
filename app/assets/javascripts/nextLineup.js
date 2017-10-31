@@ -1,8 +1,8 @@
-function nextLineup() {
-  var id = 2
+function nextLineup(id) {
+  var nextId = parseInt(id) + 1
   $.ajax({
     method: 'GET',
-    url: '/lineups/' + id + '.json',
+    url: '/lineups/' + nextId + '.json',
     success: function(response) {
       new_html = response.data.attributes.name
       window.document.getElementById('name').innerHTML = new_html;
