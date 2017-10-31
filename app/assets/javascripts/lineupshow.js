@@ -18,7 +18,7 @@ function nextLineup() {
     method: 'GET',
     url: '/lineups/' + id + '.json',
     success: function(response) {
-      new_html += response.data[0].attributes.name
+      new_html += response[0].name
       window.document.getElementById('name').innerHTML = new_html;
     }
   });
