@@ -22,7 +22,7 @@ function attachListeners() {
       method: 'GET',
       url: '/lineups/' + id + '.json',
       success: function(response) {
-        new_html += response.data[0].name
+        new_html += response.data[0].attributes.name
         window.document.getElementById('name').innerHTML = new_html;
       }
     });
