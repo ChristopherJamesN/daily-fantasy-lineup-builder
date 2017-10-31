@@ -17,15 +17,13 @@ function attachListeners() {
 
   const nextButton = window.document.getElementById('next');
   nextButton.addEventListener('click', function () {
+    var id = @lineup.id
     $.ajax({
       method: 'GET',
-      url: '/lineups.json',
+      url: '/lineups/' + id + '.json',
       success: function(response) {
-        new_html = '';
-        for (var i = 0; i < response.data.length; i++) {
-          new_html += response.data[i].id
-        }
-        window.document.getElementById('nextLineup').innerHTML = new_html;
+        new_html += response.data[0].name
+        window.document.getElementById('name').innerHTML = new_html;
       }
     });
   });

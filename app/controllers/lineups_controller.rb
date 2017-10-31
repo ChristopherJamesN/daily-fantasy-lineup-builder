@@ -15,6 +15,10 @@ class LineupsController < ApplicationController
   # GET /lineups/1
   # GET /lineups/1.json
   def show
+    respond_to do |format|
+      format.html { render :show }
+      format.json { render json: @lineup}
+    end
   end
 
   # GET /lineups/new
