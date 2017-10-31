@@ -2,20 +2,19 @@
 
   <button onclick="nextLineup(<%= @lineup.id %>)">Show Next Lineup</button>
   <br></br>
-  <div id="name"></div>
 <p>
   <strong>Name:</strong>
-  <%= @lineup.name %>
+  <div id="name"><%= @lineup.name %></div>
 </p>
 
 <p>
   <strong>Description:</strong>
-  <%= @lineup.description %>
+  <div id="description"><%= @lineup.description %></div>
 </p>
 
 <p>
   <strong>User:</strong>
-  <%= @lineup.user_id %>
+  <div id ="user"><%= @lineup.user_id %></div>
 </p>
 
 <p>
