@@ -1,11 +1,11 @@
 function nextLineup() {
-  var id = @lineup.id
+  var id = 2
   $.ajax({
     method: 'GET',
     url: '/lineups/' + id + '.json',
     success: function(response) {
-      new_html += response[0].name
+      new_html = response[0].name
       window.document.getElementById('name').innerHTML = new_html;
     }
   });
-});
+}
