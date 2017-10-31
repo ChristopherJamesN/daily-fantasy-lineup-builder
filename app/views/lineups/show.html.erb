@@ -1,4 +1,7 @@
 <div class="container well-lg">
+
+  <button id="next">Show Next Lineup</button>
+  <br></br>
 <p>
   <strong class="name">Name:</strong>
   <%= @lineup.name %>
@@ -49,8 +52,5 @@
   <%= link_to 'Edit', edit_lineup_path(@lineup) %> |
 <% end %>
 <%= link_to 'Back', lineups_path %>
-
-<button id="next">Show Next Lineup</button>
-<div id="nextLineups"></div>
 
 </div>
