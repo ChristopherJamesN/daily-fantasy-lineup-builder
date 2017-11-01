@@ -29,7 +29,8 @@
         <th onclick="sortTable(1)">Position</th>
         <th onclick="sortTable(2)">Projected Points</th>
         <th onclick="sortTable(3)">Actual Points</th>
-        <th onclick="sortTable(4)">Status</th>
+        <th onclick="sortTable(4)">Point Differential</th>
+        <th onclick="sortTable(5)">Status</th>
         <th colspan="1"></th>
       </tr>
     </thead>
@@ -41,6 +42,7 @@
       <td><%= player.position %></td>
       <td><%= player.projectedPoints %></td>
       <td><%= player.actualPoints %></td>
+      <td><%= 0 %></td>
       <td><%= LineupsPlayer.find_by(player_id: player.id, lineup_id: @lineup.id).player_starting %></td>
     </tr>
       <% end %>
@@ -49,6 +51,7 @@
         <td id= "playerPosition"></td>
         <td id= "playerActualPoints"></td>
         <td id= "playerProjectedPoints"></td>
+        <td id= "playerPointDifferential"></td>
         <td id= "playerStatus"></td>
       </tr>
     </tbody>
@@ -99,6 +102,7 @@ $(function () {
       $("#playerActualPoints").text(player.actualPoints);
       $("#playerProjectedPoints").text(player.projectedPoints);
       $("#playerStatus").text(player.status);
+      $("#playerPointDifferential").text(player.pointDifferential());
     });
   });
 });
@@ -109,5 +113,9 @@ function Player(name, position, actualPoints, projectedPoints, status) {
   this.actualPoints = actualPoints;
   this.projectedPoints = projectedPoints;
   this.status = status;
+}
+
+Player.prototype.pointDifferential = function() {
+  return this.projectedPoints - this.actualPoints
 }
 </script>
