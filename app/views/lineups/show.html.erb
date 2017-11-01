@@ -26,7 +26,10 @@
     <thead>
       <tr>
         <th onclick="sortTable(0)">Name</th>
-        <th onclick="sortTable(1)">Status</th>
+        <th onclick="sortTable(1)">Position</th>
+        <th onclick="sortTable(2)">Projected Points</th>
+        <th onclick="sortTable(3)">Actual Points</th>
+        <th onclick="sortTable(4)">Status</th>
         <th colspan="1"></th>
       </tr>
     </thead>
@@ -35,12 +38,18 @@
   <% @lineup.players.each do |player| %>
     <tr>
       <td><%= player.name %></td>
+      <td><%= player.position %></td>
+      <td><%= player.projectedPoints %></td>
+      <td><%= player.actualPoints %></td>
       <td><%= LineupsPlayer.find_by(player_id: player.id, lineup_id: @lineup.id).player_starting %></td>
     </tr>
       <% end %>
       <tr>
         <td id="playerName"></td>
         <td id= "playerPosition"></td>
+        <td id= "playerActualPoints"></td>
+        <td id= "playerProjectedPoints"></td>
+        <td id= "playerStatus"></td>
       </tr>
     </tbody>
   </table>
@@ -58,11 +67,6 @@
         <%= f.submit %>
       </div>
     <% end %>
-  </div>
-
-  <div id="playerResult">
-    <p id="playerActualPoints"></p>
-    <p id="playerProjectedPoints"></p>
   </div>
 
   <% if @lineup.user_id == current_user.id %>
@@ -94,6 +98,7 @@ $(function () {
       $("#playerPosition").text(player["position"]);
       $("#playerActualPoints").text(player["actualPoints"]);
       $("#playerProjectedPoints").text(player["projectedPoints"]);
+      $("#playerStatus").text("Starting");
     });
   });
 });
