@@ -42,15 +42,16 @@
   </table>
 
   <div class="form-group modal-sm">
-    <%= form.label :add_player %>
+    <%= label_tag :add_player %>
     <br></br>
-    Enter new player details here: <%= form.fields_for :players, lineup.players.build do |players_fields| %>
-      <%= players_fields.text_field :name, placeholder: 'Name (Required)', class: 'form-control' %>
-      <%= players_fields.select :position, ['Widereciever', 'Quarterback', 'Runningback', 'Defense'], class: 'form-control' %>
-      <%= players_fields.number_field :projectedPoints, placeholder: 'Projected Points', class: 'form-control' %>
-      <%= players_fields.number_field :actualPoints, placeholder: 'Actual Points', class: 'form-control' %>
+    Enter new player details here: <%= form_for (@lineup.players.build) do |f| %>
+      <%= f.text_field :name, placeholder: 'Name (Required)', class: 'form-control' %>
+      <%= f.select :position, ['Widereciever', 'Quarterback', 'Runningback', 'Defense'], class: 'form-control' %>
+      <%= f.number_field :projectedPoints, placeholder: 'Projected Points', class: 'form-control' %>
+      <%= f.number_field :actualPoints, placeholder: 'Actual Points', class: 'form-control' %>
+      <%= f.collection_check_boxes :lineup_ids, Lineup.where(user_id: current_user.id), :id, :name, class: 'form-control' %>
       <div class="actions">
-        <%= form.submit %>
+        <%= f.submit %>
       </div>
     <% end %>
   </div>
