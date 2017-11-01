@@ -38,6 +38,10 @@
       <td><%= LineupsPlayer.find_by(player_id: player.id, lineup_id: @lineup.id).player_starting %></td>
     </tr>
       <% end %>
+      <tr>
+        <td id="playerName"></td>
+        <td id= "playerPosition"></td>
+      </tr>
     </tbody>
   </table>
 
@@ -57,8 +61,6 @@
   </div>
 
   <div id="playerResult">
-    <h2 id="playerName"></h2>
-    <p id="playerPosition"></p>
     <p id="playerActualPoints"></p>
     <p id="playerProjectedPoints"></p>
   </div>
