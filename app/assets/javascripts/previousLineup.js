@@ -7,7 +7,7 @@ function previousLineup() {
 
       let player_html = ''
       for (var i = 0; i < response.data.attributes.players.length; i++) {
-         player_html += '<tr><td>' + response.data.attributes.players[i].name + '</td><td>' + response.data.attributes.players[i].position +'</td><td>' + response.data.attributes.players[i].projectedPoints + '</td><td>' + response.data.attributes.players[i].actualPoints + '</td></tr>'
+         player_html += '<tr><td>' + response.data.attributes.players[i].name + '</td><td>' + response.data.attributes.players[i].position +'</td><td>' + ifNull(response.data.attributes.players[i].projectedPoints) + '</td><td>' + ifNull(response.data.attributes.players[i].actualPoints) + '</td></tr>'
        }
 
       window.document.getElementById('name').innerHTML = response.data.attributes.name
@@ -18,4 +18,12 @@ function previousLineup() {
       window.document.getElementById('tableBody').innerHTML = player_html
     }
   });
+}
+
+function ifNull(response) {
+  if (response === null){
+    return ''
+  } else {
+    return response
+  }
 }
