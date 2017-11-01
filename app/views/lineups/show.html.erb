@@ -41,6 +41,13 @@
     </tbody>
   </table>
 
+  <div id="playerResult">
+    <h2 id="playerName"></h2>
+    <p id="playerPosition"></p>
+    <p id="playerActualPoints"></p>
+    <p id="playerProjectedPoints"></p>
+  </div>
+
   <% if @lineup.user_id == current_user.id %>
     <br></br>
     <%= link_to 'See Players', lineup_players_path(@lineup.id) %>
