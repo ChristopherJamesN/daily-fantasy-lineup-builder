@@ -41,6 +41,20 @@
     </tbody>
   </table>
 
+  <div class="form-group modal-sm">
+    <%= form.label :add_player %>
+    <br></br>
+    Enter new player details here: <%= form.fields_for :players, lineup.players.build do |players_fields| %>
+      <%= players_fields.text_field :name, placeholder: 'Name (Required)', class: 'form-control' %>
+      <%= players_fields.select :position, ['Widereciever', 'Quarterback', 'Runningback', 'Defense'], class: 'form-control' %>
+      <%= players_fields.number_field :projectedPoints, placeholder: 'Projected Points', class: 'form-control' %>
+      <%= players_fields.number_field :actualPoints, placeholder: 'Actual Points', class: 'form-control' %>
+      <div class="actions">
+        <%= form.submit %>
+      </div>
+    <% end %>
+  </div>
+
   <div id="playerResult">
     <h2 id="playerName"></h2>
     <p id="playerPosition"></p>
