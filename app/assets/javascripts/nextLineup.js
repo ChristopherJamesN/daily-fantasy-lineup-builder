@@ -7,7 +7,7 @@ function nextLineup() {
 
      let player_html = ''
      for (var i = 0; i < response.data.attributes.players.length; i++) {
-        player_html += '<tr><td>' + response.data.attributes.players[i].name + '</td><td>' + response.data.attributes.players[i].position +'</td><td>' + ifNull(response.data.attributes.players[i].projectedPoints) + '</td><td>' + ifNull(response.data.attributes.players[i].actualPoints) + '</td><td>' + 'Placeholder for status' + '</td></tr>'
+        player_html += '<tr><td>' + response.data.attributes.players[i].name + '</td><td>' + response.data.attributes.players[i].position +'</td><td>' + ifNull(response.data.attributes.players[i].projectedPoints) + '</td><td>' + ifNull(response.data.attributes.players[i].actualPoints) + '</td><td>' + (ifNull(response.data.attributes.players[i].projectedPoints) - ifNull(response.data.attributes.players[i].actualPoints))  + '</td><td>' + 'Starting' + '</td></tr>'
       }
 
       window.document.getElementById('name').innerHTML = response.data.attributes.name
