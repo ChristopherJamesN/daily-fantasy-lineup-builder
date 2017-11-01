@@ -4,7 +4,7 @@ $(function () {
 
     var values = $(this).serialize();
 
-    var posting = $.post('/players', values);
+    var posting = $.post('/players.json', values);
 
     posting.done(function(data) {
       var player = data;
