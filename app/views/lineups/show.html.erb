@@ -42,7 +42,7 @@
       <td><%= player.position %></td>
       <td><%= player.projectedPoints %></td>
       <td><%= player.actualPoints %></td>
-      <td><%= 0 %></td>
+      <td><%= player.point_differential %></td>
       <td><%= LineupsPlayer.find_by(player_id: player.id, lineup_id: @lineup.id).player_starting %></td>
     </tr>
       <% end %>

@@ -15,4 +15,12 @@ class Player < ApplicationRecord
     end
   end
 
+  def point_differential
+    if self.actualPoints != nil && self.projectedPoints != nil
+      return self.projectedPoints - self.actualPoints
+    else
+      return ''
+    end
+  end
+
 end
