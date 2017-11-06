@@ -87,11 +87,18 @@
 </div>
 
 <script>
+
 $(function () {
   $('form').submit(function(event) {
     event.preventDefault();
 
     var values = $(this).serialize();
+
+    $.ajaxSetup({
+      headers: {
+        'X-CSRF-Token': $('meta[name="csrf-token"]').attr('content')
+      }
+    });
 
     var posting = $.post('/players.json', values);
 
