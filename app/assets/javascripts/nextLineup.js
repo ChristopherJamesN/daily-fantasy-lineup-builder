@@ -12,7 +12,7 @@ function nextLineup() {
 
       window.document.getElementById('name').innerHTML = response.name
       window.document.getElementById('description').innerHTML = response.description
-      window.document.getElementById('user').innerHTML = response.user.id
+      window.document.getElementById('user').innerHTML = response.user_id
       window.document.getElementById('next').setAttribute('data-id', response.id)
       window.document.getElementById('previous').setAttribute('data-id', response.id)
       window.document.getElementById('tableBody').innerHTML = player_html
