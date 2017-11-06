@@ -11,7 +11,7 @@ function showLineups() {
             }
           new_html += response[i].name + '<br>' + response[i].description + '<br>' + player_html + '<br>'
         }
-        window.document.getElementById('lineups').innerHTML = new_html;
+        $("#lineups").html(new_html);
       }
     });
   }

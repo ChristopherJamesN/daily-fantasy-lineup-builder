@@ -1,5 +1,5 @@
 function nextLineup() {
-  var nextId = parseInt(window.document.getElementById('next').getAttribute('data-id')) + 1
+  var nextId = parseInt($("#next").attr("data-id")) + 1
   $.ajax({
     method: 'GET',
     url: '/lineups/' + nextId + '.json',
@@ -10,12 +10,12 @@ function nextLineup() {
         player_html += '<tr><td>' + response.players[i].name + '</td><td>' + response.players[i].position +'</td><td>' + ifNull(response.players[i].projectedPoints) + '</td><td>' + ifNull(response.players[i].actualPoints) + '</td><td>' + (ifNull(response.players[i].projectedPoints) - ifNull(response.players[i].actualPoints))  + '</td><td>' + response.lineups_players[i].player_starting + '</td></tr>'
       }
 
-      window.document.getElementById('name').innerHTML = response.name
-      window.document.getElementById('description').innerHTML = response.description
-      window.document.getElementById('user').innerHTML = response.user_id
-      window.document.getElementById('next').setAttribute('data-id', response.id)
-      window.document.getElementById('previous').setAttribute('data-id', response.id)
-      window.document.getElementById('tableBody').innerHTML = player_html
+      $("#name").html(response.name)
+      $("#description").html(response.description)
+      $("#user").html(response.user_id)
+      $("#next").attr('data-id', response.id)
+      $("#previous").attr('data-id', response.id)
+      $("#tableBody").html(player_html)
     }
   });
 }
