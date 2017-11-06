@@ -124,6 +124,10 @@ function Player(name, position, actualPoints, projectedPoints, status) {
 }
 
 Player.prototype.pointDifferential = function() {
-  return this.projectedPoints - this.actualPoints
+  if (this.projectedPoints != '' && this .actualPoints != ''){
+    return this.projectedPoints - this.actualPoints;
+  } else {
+    return '';
+  }
 }
 </script>
