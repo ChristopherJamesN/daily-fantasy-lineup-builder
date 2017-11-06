@@ -4,12 +4,12 @@ function showLineups() {
       url: '/lineups.json',
       success: function(response) {
         let new_html = ''
-        for (var i = 0; i < response.data.length; i++) {
+        for (var i = 0; i < response.length; i++) {
           let player_html = ''
-            for (var j = 0; j < response.data[i].attributes.players.length; j++) {
-              player_html += response.data[i].attributes.players[j].name + ' ' + response.data[i].attributes.players[j].position +'<br>'
+            for (var j = 0; j < response[i].players.length; j++) {
+              player_html += response[i].players[j].name + ' ' + response[i].players[j].position +'<br>'
             }
-          new_html += response.data[i].attributes.name + '<br>' + response.data[i].attributes.description + '<br>' + player_html + '<br>'
+          new_html += response[i].name + '<br>' + response[i].description + '<br>' + player_html + '<br>'
         }
         window.document.getElementById('lineups').innerHTML = new_html;
       }
