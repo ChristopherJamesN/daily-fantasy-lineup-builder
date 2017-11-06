@@ -96,7 +96,7 @@ $(function () {
     var posting = $.post('/players.json', values);
 
     posting.done(function(data) {
-      var player = new Player (data["name"], data["position"], data["actualPoints"], data["projectedPoints"], "Starting");
+      var player = new Player (data.name, data.position, data.actualPoints, data.projectedPoints, "Starting");
       $("#playerName").text(player.name);
       $("#playerPosition").text(player.position);
       $("#playerActualPoints").text(player.actualPoints);
