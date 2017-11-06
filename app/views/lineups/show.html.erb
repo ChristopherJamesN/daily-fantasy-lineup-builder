@@ -67,7 +67,7 @@
       <%= f.number_field :actualPoints, placeholder: 'Actual Points', class: 'form-control' %>
       <%= f.collection_check_boxes :lineup_ids, Lineup.where(user_id: current_user.id), :id, :name, class: 'form-control' %>
       <div class="actions">
-        <%= f.submit %>
+        <%= f.button %>
       </div>
     <% end %>
   </div>
@@ -110,6 +110,7 @@ $(function () {
       $("#playerProjectedPoints").text(player.projectedPoints);
       $("#playerStatus").text(player.status);
       $("#playerPointDifferential").text(player.pointDifferential());
+      $("form")[0].reset();
     });
   });
 });
