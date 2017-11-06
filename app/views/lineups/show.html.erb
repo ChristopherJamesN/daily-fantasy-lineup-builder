@@ -110,8 +110,16 @@ $(function () {
 function Player(name, position, actualPoints, projectedPoints, status) {
   this.name = name;
   this.position = position;
-  this.actualPoints = actualPoints;
-  this.projectedPoints = projectedPoints;
+  if (actualPoints != null) {
+    this.actualPoints = actualPoints;
+  } else {
+    this.actualPoints = '';
+  }
+  if (projectedPoints != null) {
+    this.projectedPoints = projectedPoints;
+  } else {
+    this.projectedPoints = '';
+  }
   this.status = status;
 }
 
