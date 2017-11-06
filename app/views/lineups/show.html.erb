@@ -104,12 +104,12 @@ $(function () {
 
     posting.done(function(data) {
       var player = new Player (data.name, data.position, data.actualPoints, data.projectedPoints, "Starting");
-      $("#playerName").text(player.name);
-      $("#playerPosition").text(player.position);
-      $("#playerActualPoints").text(player.actualPoints);
-      $("#playerProjectedPoints").text(player.projectedPoints);
-      $("#playerStatus").text(player.status);
-      $("#playerPointDifferential").text(player.pointDifferential());
+      $("#playerName").append(player.name);
+      $("#playerPosition").append(player.position);
+      $("#playerActualPoints").append(player.actualPoints);
+      $("#playerProjectedPoints").append(player.projectedPoints);
+      $("#playerStatus").append(player.status);
+      $("#playerPointDifferential").append(player.pointDifferential());
       $("form")[0].reset();
     });
   });
