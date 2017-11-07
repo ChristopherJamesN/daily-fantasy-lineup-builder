@@ -10,7 +10,7 @@ function previousLineup() {
          player_html += '<tr><td>' + response.data.attributes.players[i].name + '</td><td>' + response.data.attributes.players[i].position +'</td><td>'
          + ifNull(response.data.attributes.players[i].projectedPoints) + '</td><td>' + ifNull(response.data.attributes.players[i].actualPoints) + '</td><td>'
          + (ifNull(response.data.attributes.players[i].projectedPoints) - ifNull(response.data.attributes.players[i].actualPoints))
-         + '</td><td>' + 'Placeholder'/*response.data.attributes.lineups-players[i].player_starting*/ + '</td></tr>'
+         + '</td><td>' + response['data']['attributes']['lineups-players'][i]['player_starting'] + '</td></tr>'
        }
 
        $("#name").html(response.data.attributes.name)
