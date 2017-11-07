@@ -46,14 +46,6 @@
       <td><%= LineupsPlayer.find_by(player_id: player.id, lineup_id: @lineup.id).player_starting %></td>
     </tr>
       <% end %>
-      <tr>
-        <td id="playerName"></td>
-        <td id= "playerPosition"></td>
-        <td id= "playerActualPoints"></td>
-        <td id= "playerProjectedPoints"></td>
-        <td id= "playerPointDifferential"></td>
-        <td id= "playerStatus"></td>
-      </tr>
     </tbody>
   </table>
 
@@ -104,12 +96,12 @@ $(function () {
 
     posting.done(function(data) {
       var player = new Player (data.name, data.position, data.actualPoints, data.projectedPoints, "Starting");
-      $("#playerName").append(player.name);
-      $("#playerPosition").append(player.position);
-      $("#playerActualPoints").append(player.actualPoints);
-      $("#playerProjectedPoints").append(player.projectedPoints);
-      $("#playerStatus").append(player.status);
-      $("#playerPointDifferential").append(player.pointDifferential());
+      $("#tableBody").append('<tr><td>' + player.name + '</td>');
+      $("#tableBody").append('<td>' + player.position + '</td>');
+      $("#tableBody").append('<td>' + player.actualPoints + '</td>');
+      $("#tableBody").append('<td>' + player.projectedPoints + '</td>');
+      $("#tableBody").append('<td>' + player.status + '</td>');
+      $("#tableBody").append('<td>' + player.pointDifferential() + '</td></tr>');
       $("form")[0].reset();
     });
   });
