@@ -11,7 +11,7 @@ class PlayersController < ApplicationController
       @players = Player.all
     end
     respond_to do |format|
-      format.html { render :show }
+      format.html { render :index }
       format.json { render json: @players}
     end
   end
