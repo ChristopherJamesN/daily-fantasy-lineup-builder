@@ -96,8 +96,8 @@ $(function () {
 
     var posting = $.post('/players.json', values);
 
-    posting.done(function(data) {
-      var player = new Player (data.name, data.position, data.actualPoints, data.projectedPoints, "Starting");
+    posting.done(function(response) {
+      var player = new Player (response.data.attributes.name, response.data.attributes.position, response['data']['attributes']['actual-points'], response['data']['attributes']['projected-points'], "Starting");
       $("#myTable tbody").append('<tr class="child">'+ '<td>' + player.name + '</td>'
       + '<td>' + player.position + '</td>'
       + '<td>' + player.actualPoints + '</td>'

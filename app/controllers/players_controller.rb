@@ -16,6 +16,10 @@ class PlayersController < ApplicationController
   # GET /players/1.json
   def show
     @lineups_players = LineupsPlayer.where(player_id: @player.id)
+    respond_to do |format|
+      format.html { render :show }
+      format.json { render json: @player}
+    end
   end
 
   # GET /players/new or GET lineups/id:/players/new if linking from a lineup show page.
@@ -37,7 +41,7 @@ class PlayersController < ApplicationController
     respond_to do |format|
       if @player.save
         format.html { redirect_to @player, notice: 'Player was successfully created.' }
-        format.json { render :show, status: :created, location: @player }
+        format.json { render json: @player, status: 201}
       else
         format.html { render :new }
         format.json { render json: @player.errors, status: :unprocessable_entity }
