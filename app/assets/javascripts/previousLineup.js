@@ -6,15 +6,18 @@ function previousLineup() {
     success: function(response) {
 
       let player_html = ''
-      for (var i = 0; i < response.players.length; i++) {
-         player_html += '<tr><td>' + response.players[i].name + '</td><td>' + response.players[i].position +'</td><td>' + ifNull(response.players[i].projectedPoints) + '</td><td>' + ifNull(response.players[i].actualPoints) + '</td><td>' + (ifNull(response.players[i].projectedPoints) - ifNull(response.players[i].actualPoints))  + '</td><td>' + response.lineups_players[i].player_starting  + '</td></tr>'
+      for (var i = 0; i < response.data.attributes.players.length; i++) {
+         player_html += '<tr><td>' + response.data.attributes.players[i].name + '</td><td>' + response.data.attributes.players[i].position +'</td><td>'
+         + ifNull(response.data.attributes.players[i].projectedPoints) + '</td><td>' + ifNull(response.data.attributes.players[i].actualPoints) + '</td><td>'
+         + (ifNull(response.data.attributes.players[i].projectedPoints) - ifNull(response.data.attributes.players[i].actualPoints))
+         + '</td><td>' + response.data.attributes.lineups-players[i].player_starting + '</td></tr>'
        }
 
-       $("#name").html(response.name)
-       $("#description").html(response.description)
-       $("#user").html(response.user_id)
-       $("#next").attr('data-id', response.id)
-       $("#previous").attr('data-id', response.id)
+       $("#name").html(response.data.attributes.name)
+       $("#description").html(response.data.attributes.description)
+       $("#user").html(response.data.attributes.user.id)
+       $("#next").attr('data-id', response.data.id)
+       $("#previous").attr('data-id', response.data.id)
        $("#tableBody").html(player_html)
     }
   });
