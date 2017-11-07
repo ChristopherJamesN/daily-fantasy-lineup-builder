@@ -86,7 +86,8 @@ $(function () {
   $('form').submit(function(event) {
     event.preventDefault();
 
-    var values = $(this).serialize();
+    const form = this;
+    const values = $(form).serialize();
 
     $.ajaxSetup({
       headers: {
@@ -94,18 +95,12 @@ $(function () {
       }
     });
 
-    var posting = $.post('/players.json', values);
-
-    posting.done(function(response) {
-      var player = new Player (response.data.attributes.name, response.data.attributes.position, response['data']['attributes']['actual-points'], response['data']['attributes']['projected-points'], "Starting");
-      $("#myTable tbody").append('<tr class="child">'+ '<td>' + player.name + '</td>'
-      + '<td>' + player.position + '</td>'
-      + '<td>' + player.actualPoints + '</td>'
-      + '<td>' + player.projectedPoints + '</td>'
-      + '<td>' + player.pointDifferential() + '</td>'
-      + '<td>' + player.status + '</td>' + '</tr>');
-      $("form")[0].reset();
-    });
+    $.post('/players.json', values)
+      .done(({ data }) => {
+        const player = new Player (data.attributes.name, data.attributes.position, data['attributes']['actual-points'], data['attributes']['projected-points'], "Starting");
+        $("#myTable tbody").append(player.render())
+        form.reset();
+      });
   });
 });
 
@@ -131,5 +126,18 @@ Player.prototype.pointDifferential = function() {
   } else {
     return '';
   }
+}
+
+Player.prototype.render = function() {
+  return (`
+    <tr class="child">
+      <td>${this.name}</td>
+      <td>${this.position}</td>
+      <td>${this.actualPoints}</td>
+      <td>${this.projectedPoints}</td>
+      <td>${this.pointDifferential()}</td>
+      <td>${this.status}</td>
+    </tr>
+  `);
 }
 </script>
