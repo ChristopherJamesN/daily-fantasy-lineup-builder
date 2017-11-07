@@ -57,7 +57,9 @@
       <%= f.select :position, ['Widereciever', 'Quarterback', 'Runningback', 'Defense'], class: 'form-control' %>
       <%= f.number_field :projectedPoints, placeholder: 'Projected Points', class: 'form-control' %>
       <%= f.number_field :actualPoints, placeholder: 'Actual Points', class: 'form-control' %>
-      <%= f.collection_check_boxes :lineup_ids, Lineup.where(user_id: current_user.id, id: @lineup.id), :id, :name, class: 'form-control' %>
+      <%= f.collection_check_boxes(:lineup_ids, Lineup.where(user_id: current_user.id, id: @lineup.id), :id, :name, class: 'form-control') do |b| %>
+        <%= b.label(class: "check_box") { b.check_box(checked: true, class: "add_margin") + b.text } %>
+      <% end %>
       <div class="actions">
         <%= f.button %>
       </div>
