@@ -10,7 +10,10 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20171020003257) do
+ActiveRecord::Schema.define(version: 20171105164939) do
+
+  # These are extensions that must be enabled in order to support this database
+  enable_extension "plpgsql"
 
   create_table "lineups", force: :cascade do |t|
     t.string "name"
@@ -24,6 +27,13 @@ ActiveRecord::Schema.define(version: 20171020003257) do
     t.integer "lineup_id"
     t.integer "player_id"
     t.string "player_starting", default: "Starting"
+  end
+
+  create_table "notes", force: :cascade do |t|
+    t.string "name"
+    t.string "description"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
   end
 
   create_table "players", force: :cascade do |t|
@@ -52,6 +62,14 @@ ActiveRecord::Schema.define(version: 20171020003257) do
     t.string "uid"
     t.index ["email"], name: "index_users_on_email", unique: true
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
+  end
+
+  create_table "widgets", id: :serial, force: :cascade do |t|
+    t.string "name"
+    t.text "description"
+    t.integer "stock"
+    t.datetime "created_at"
+    t.datetime "updated_at"
   end
 
 end
