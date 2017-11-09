@@ -5,7 +5,7 @@ function previousLineup() {
     url: '/lineups/' + previousId + '.json',
     success: function(response) {
 
-      let player_html = ''
+      var player_html = ''
       for (var i = 0; i < response.data.attributes.players.length; i++) {
          player_html += '<tr><td>' + response.data.attributes.players[i].name + '</td><td>' + response.data.attributes.players[i].position +'</td><td>'
          + ifNull(response.data.attributes.players[i].projectedPoints) + '</td><td>' + ifNull(response.data.attributes.players[i].actualPoints) + '</td><td>'

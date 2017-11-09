@@ -3,7 +3,7 @@ function showLineups() {
       method: 'GET',
       url: '/lineups.json',
       success: function(response) {
-        let new_html = ''
+        var new_html = ''
         for (var i = 0; i < response.data.length; i++) {
 
           var sortedPlayers = response.data[i].attributes.players.sort(function(a,b) {
@@ -20,7 +20,7 @@ function showLineups() {
               return 0;
           })
 
-          let player_html = ''
+          var player_html = ''
           for (var j = 0; j < sortedPlayers.length; j++) {
             player_html += sortedPlayers[j].name + ' ' + sortedPlayers[j].position +'<br>'
           }
