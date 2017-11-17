@@ -1,5 +1,5 @@
 # rails-daily-fantasy-lineup-builder
-A web application that can be used to build and store daily fantasy football lineups.
+A web application that can be used to build and store daily fantasy football lineups. Demo on hosted on Heroku here: https://fierce-fortress-50451.herokuapp.com/.
 
 ## Installation
 To test out this application locally, fork and clone the repo.
