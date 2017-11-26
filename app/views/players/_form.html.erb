@@ -12,16 +12,6 @@
   <% end %>
 
   <div class="field">
-    <%= form.label :name %>
-    <%= form.text_field :name, id: :player_name %>
-  </div>
-
-  <div class="field">
-    <%= form.label :position %>
-    <%= form.select :position, ['Widereciever', 'Quarterback', 'Runningback', 'Defense'], class: 'form-control' %>
-  </div>
-
-  <div class="field">
     <%= form.label :projectedPoints %>
     <%= form.number_field :projectedPoints, id: :player_projectedPoints %>
   </div>
