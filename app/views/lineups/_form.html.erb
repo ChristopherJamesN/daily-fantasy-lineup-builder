@@ -23,7 +23,6 @@
 
   <div class="form-group modal-sm">
     <%= form.label :quarterback %>
-    <br></br>
     Enter Quarterback details here: <%= form.fields_for :players, lineup.players.build do |players_fields| %>
       <%= players_fields.text_field :name, placeholder: 'Name (Required)', class: 'form-control' %>
       <%= players_fields.text_field :position, value: 'Quarterback', class: 'form-control', :readonly => true%>
@@ -33,8 +32,7 @@
   </div>
 
   <div class="form-group modal-sm">
-    <%= form.label :runningback %>
-    <br></br>
+    <%= form.label :runningback1 %>
       Enter Runningback details here: <%= form.fields_for :players, lineup.players.build do |players_fields| %>
       <%= players_fields.text_field :name, placeholder: 'Name (Required)', class: 'form-control' %>
       <%= players_fields.text_field :position, value: 'Runningback', class: 'form-control', :readonly => true%>
@@ -44,8 +42,17 @@
   </div>
 
   <div class="form-group modal-sm">
-    <%= form.label :widereciever %>
-    <br></br>
+    <%= form.label :runningback2 %>
+      Enter Runningback details here: <%= form.fields_for :players, lineup.players.build do |players_fields| %>
+      <%= players_fields.text_field :name, placeholder: 'Name (Required)', class: 'form-control' %>
+      <%= players_fields.text_field :position, value: 'Runningback', class: 'form-control', :readonly => true%>
+      <%= players_fields.number_field :projectedPoints, placeholder: 'Projected Points', class: 'form-control' %>
+      <%= players_fields.number_field :actualPoints, placeholder: 'Actual Points', class: 'form-control' %>
+    <% end %>
+  </div>
+
+  <div class="form-group modal-sm">
+    <%= form.label :widereciever1 %>
     Enter Widereciever details here: <%= form.fields_for :players, lineup.players.build do |players_fields| %>
       <%= players_fields.text_field :name, placeholder: 'Name (Required)', class: 'form-control' %>
       <%= players_fields.text_field :position, value: 'Widereciever', class: 'form-control', :readonly => true%>
@@ -55,8 +62,47 @@
   </div>
 
   <div class="form-group modal-sm">
+    <%= form.label :widereciever2 %>
+    Enter Widereciever details here: <%= form.fields_for :players, lineup.players.build do |players_fields| %>
+      <%= players_fields.text_field :name, placeholder: 'Name (Required)', class: 'form-control' %>
+      <%= players_fields.text_field :position, value: 'Widereciever', class: 'form-control', :readonly => true%>
+      <%= players_fields.number_field :projectedPoints, placeholder: 'Projected Points', class: 'form-control' %>
+      <%= players_fields.number_field :actualPoints, placeholder: 'Actual Points', class: 'form-control' %>
+    <% end %>
+  </div>
+
+  <div class="form-group modal-sm">
+    <%= form.label :widereciever3 %>
+    Enter Widereciever details here: <%= form.fields_for :players, lineup.players.build do |players_fields| %>
+      <%= players_fields.text_field :name, placeholder: 'Name (Required)', class: 'form-control' %>
+      <%= players_fields.text_field :position, value: 'Widereciever', class: 'form-control', :readonly => true%>
+      <%= players_fields.number_field :projectedPoints, placeholder: 'Projected Points', class: 'form-control' %>
+      <%= players_fields.number_field :actualPoints, placeholder: 'Actual Points', class: 'form-control' %>
+    <% end %>
+  </div>
+
+  <div class="form-group modal-sm">
+    <%= form.label :tightend %>
+    Enter Widereciever details here: <%= form.fields_for :players, lineup.players.build do |players_fields| %>
+      <%= players_fields.text_field :name, placeholder: 'Name (Required)', class: 'form-control' %>
+      <%= players_fields.text_field :position, value: 'Tightend', class: 'form-control', :readonly => true%>
+      <%= players_fields.number_field :projectedPoints, placeholder: 'Projected Points', class: 'form-control' %>
+      <%= players_fields.number_field :actualPoints, placeholder: 'Actual Points', class: 'form-control' %>
+    <% end %>
+  </div>
+
+  <div class="form-group modal-sm">
+    <%= form.label :flex %>
+    Enter Widereciever details here: <%= form.fields_for :players, lineup.players.build do |players_fields| %>
+      <%= players_fields.text_field :name, placeholder: 'Name (Required)', class: 'form-control' %>
+      <%= players_fields.text_field :position, value: 'Flex', class: 'form-control', :readonly => true%>
+      <%= players_fields.number_field :projectedPoints, placeholder: 'Projected Points', class: 'form-control' %>
+      <%= players_fields.number_field :actualPoints, placeholder: 'Actual Points', class: 'form-control' %>
+    <% end %>
+  </div>
+
+  <div class="form-group modal-sm">
     <%= form.label :defense %>
-    <br></br>
     Enter Defense details here: <%= form.fields_for :players, lineup.players.build do |players_fields| %>
       <%= players_fields.text_field :name, placeholder: 'Name (Required)', class: 'form-control' %>
       <%= players_fields.text_field :position, value: 'Defense', class: 'form-control', :readonly => true%>
