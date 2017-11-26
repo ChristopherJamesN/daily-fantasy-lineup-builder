@@ -15,7 +15,7 @@
     <div class="container well-lg">
 
     <% if user_signed_in? %>
-    <nav class="navbar navbar-expand-sm navbar-dark bg-primary">
+    <nav class="navbar navbar-expand-sm navbar-dark bg-dark">
     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>
     </button>
@@ -31,7 +31,7 @@
     </nav>
 
       <% else %>
-      <nav class="navbar navbar-expand-sm navbar-dark bg-primary">
+      <nav class="navbar navbar-expand-sm navbar-dark bg-dark">
       <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
       </button>
@@ -44,6 +44,7 @@
         </div>
       </nav>
     <%end %>
+    <br></br>
     <%= content_tag(:div, flash[:error], :id => "flash_error", class: "alert alert-danger alert-dismissable", data: { dismiss: 'alert' }) if flash[:error] %>
     <%= content_tag(:div, flash[:notice], :id => "flash_notice", class: "alert alert-success alert-dismissable", data: { dismiss: 'alert' }) if flash[:notice] %>
     <%= content_tag(:div, flash[:alert], :id => "flash_alert", class: "alert alert-danger alert-dismissable", data: { dismiss: 'alert' }) if flash[:alert] %>
