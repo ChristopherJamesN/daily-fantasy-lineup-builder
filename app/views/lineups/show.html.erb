@@ -49,23 +49,6 @@
     </tbody>
   </table>
 
-  <div class="form-group modal-sm">
-    <%= label_tag :add_player %>
-    <br></br>
-    Enter new player details here: <%= form_for (@lineup.players.build) do |f| %>
-      <%= f.text_field :name, placeholder: 'Name (Required)', class: 'form-control' %>
-      <%= f.select :position, ['Widereciever', 'Quarterback', 'Runningback', 'Defense'], class: 'form-control' %>
-      <%= f.number_field :projectedPoints, placeholder: 'Projected Points', class: 'form-control' %>
-      <%= f.number_field :actualPoints, placeholder: 'Actual Points', class: 'form-control' %>
-      <%= f.collection_check_boxes(:lineup_ids, Lineup.where(user_id: current_user.id, id: @lineup.id), :id, :name, class: 'form-control') do |b| %>
-        <%= b.label(class: "check_box") { b.check_box(checked: true, class: "add_margin") + b.text } %>
-      <% end %>
-      <div class="actions">
-        <%= f.button %>
-      </div>
-    <% end %>
-  </div>
-
   <% if @lineup.user_id == current_user.id %>
     <br></br>
     <%= link_to 'See Players', lineup_players_path(@lineup.id) %>
