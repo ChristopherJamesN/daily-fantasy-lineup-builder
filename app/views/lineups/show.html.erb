@@ -1,7 +1,7 @@
 <div class="container well-lg">
 
-  <button id="previous" data-id="<%= @lineup.id %>" onclick="previousLineup()" type="button" class="btn btn-dark">Show Previous Lineup</button>
-  <button id="next" data-id="<%= @lineup.id %>" onclick="nextLineup()" type="button" class="btn btn-dark">Show Next Lineup</button>
+  <button id="previous" data-id="<%= @lineup.id %>" onclick="previousLineup()" type="button" class="btn btn-primary">Show Previous Lineup</button>
+  <button id="next" data-id="<%= @lineup.id %>" onclick="nextLineup()" type="button" class="btn btn-primary">Show Next Lineup</button>
   <br></br>
 <p>
   <strong>Name:</strong>
@@ -18,7 +18,7 @@
   <br>
 
   <table class="table" id="myTable">
-    <thead class="thead-dark">
+    <thead>
       <tr>
         <th onclick="sortTable(0)" scope="col">Name</th>
         <th onclick="sortTable(1)" scope="col">Position</th>
