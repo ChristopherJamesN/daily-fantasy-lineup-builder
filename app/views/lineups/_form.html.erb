@@ -21,50 +21,50 @@
     <%= form.text_field :description, id: :lineup_description, class: 'form-control' %>
   </div>
 
-  <div class="form-group modal-sm">
-    <%= form.label :quarterback %>
-    Choose your quarterback: <%= form.collection_select :player_id, Player.where(position: 'Quarterback'), :id, :name %>
-  </div>
+    <div class="form-group modal-sm">
+      <%= form.label :quarterback %>
+      Choose your quarterback: <%= form.collection_select 'players_attributes[quarterback]', Player.where(position: 'Quarterback'), :id, :name %>
+    </div>
 
-  <div class="form-group modal-sm">
-    <%= form.label :runningback1 %>
-    Choose your first runningback: <%= form.collection_select :player_id, Player.where(position: 'Runningback'), :id, :name %>
-  </div>
+    <div class="form-group modal-sm">
+      <%= form.label :runningback1 %>
+      Choose your first runningback: <%= form.collection_select 'players_attributes[runningback1]', Player.where(position: 'Runningback'), :id, :name %>
+    </div>
 
-  <div class="form-group modal-sm">
-    <%= form.label :runningback2 %>
-    Choose your second runningback: <%= form.collection_select :player_id, Player.where(position: 'Runningback'), :id, :name %>
-  </div>
+    <div class="form-group modal-sm">
+      <%= form.label :runningback2 %>
+      Choose your second runningback: <%= form.collection_select 'players_attributes[runningback2]', Player.where(position: 'Runningback'), :id, :name %>
+    </div>
 
-  <div class="form-group modal-sm">
-    <%= form.label :widereciever1 %>
-    Choose your first widereceiver: <%= form.collection_select :player_id, Player.where(position: 'Widereciever'), :id, :name %>
-  </div>
+    <div class="form-group modal-sm">
+      <%= form.label :widereciever1 %>
+      Choose your first widereceiver: <%= form.collection_select 'players_attributes[widereciever1]', Player.where(position: 'Widereciever'), :id, :name %>
+    </div>
 
-  <div class="form-group modal-sm">
-    <%= form.label :widereciever2 %>
-    Choose your second widereceiver: <%= form.collection_select :player_id, Player.where(position: 'Widereciever'), :id, :name %>
-  </div>
+    <div class="form-group modal-sm">
+      <%= form.label :widereciever2 %>
+      Choose your second widereceiver: <%= form.collection_select 'players_attributes[widereciever2]', Player.where(position: 'Widereciever'), :id, :name %>
+    </div>
 
-  <div class="form-group modal-sm">
-    <%= form.label :widereciever3 %>
-    Choose your third widereceiver: <%= form.collection_select :player_id, Player.where(position: 'Widereciever'), :id, :name %>
-  </div>
+    <div class="form-group modal-sm">
+      <%= form.label :widereciever3 %>
+      Choose your third widereceiver: <%= form.collection_select 'players_attributes[widereciever3]', Player.where(position: 'Widereciever'), :id, :name %>
+    </div>
 
-  <div class="form-group modal-sm">
-    <%= form.label :tightend %>
-    Choose your tightend: <%= form.collection_select :player_id, Player.where(position: 'Tightend'), :id, :name %>
-  </div>
+    <div class="form-group modal-sm">
+      <%= form.label :tightend %>
+      Choose your tightend: <%= form.collection_select 'players_attributes[tightend]', Player.where(position: 'Tightend'), :id, :name %>
+    </div>
 
-  <div class="form-group modal-sm">
-    <%= form.label :flex %>
-    Choose your flex player: <%= form.collection_select :player_id, Player.where(position: 'Widereciever'), :id, :name %>
-  </div>
+    <div class="form-group modal-sm">
+      <%= form.label :flex %>
+      Choose your flex player: <%= form.collection_select 'players_attributes[flex]', Player.where(position: 'Widereciever'), :id, :name %>
+    </div>
 
-  <div class="form-group modal-sm">
-    <%= form.label :defense %>
-    Choose your defense: <%= form.collection_select :player_id, Player.where(position: 'Defense'), :id, :name %>
-  </div>
+    <div class="form-group modal-sm">
+      <%= form.label :defense %>
+      Choose your defense: <%= form.collection_select 'players_attributes[defense]', Player.where(position: 'Defense'), :id, :name %>
+    </div>
 
   <div class="actions">
     <%= form.submit %>

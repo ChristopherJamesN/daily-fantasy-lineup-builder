@@ -92,6 +92,6 @@ class LineupsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def lineup_params
-      params.require(:lineup).permit(:name, :description, {players_attributes: [:name, :position, :projectedPoints, :actualPoints]})
+      params.require(:lineup).permit(:name, :description, player_ids:[], players_attributes: [:player_id, :quarterback, :runningback1, :runningback2, :widereciever1, :widereciever2, :widereciever3, :tightend, :flex, :defense])
     end
 end
