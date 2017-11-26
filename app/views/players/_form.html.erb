@@ -16,24 +16,6 @@
     <%= form.number_field :projectedPoints, id: :player_projectedPoints %>
   </div>
 
-  <div class="field">
-    <%= form.label :actualPoints %>
-    <%= form.number_field :actualPoints, id: :player_actualPoints %>
-  </div>
-
-  <div class="field">
-    <%= form.label :lineup %>
-    <%= form.collection_check_boxes :lineup_ids, Lineup.where(user_id: current_user.id), :id, :name, class: 'form-control' %>
-  </div>
-
-  <div class="field">
-      <%= form.fields_for :lineups_players do |lineups_player_fields| %>
-        Player Status: <%= lineups_player_fields.select :player_starting, ['Starting', 'Benched', 'Injured'] %>
-        <%= lineups_player_fields.collection_select :lineup_id, Lineup.where(id: player.lineups.ids[lineups_player_fields.index]), :id, :name%>
-        <br>
-    <% end %>
-  </div>
-
   <div class="actions">
     <%= form.submit %>
   </div>
