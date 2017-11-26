@@ -14,23 +14,18 @@
 </p>
 
 <p>
-  <strong>User:</strong>
-  <div id ="user"><%= @lineup.user_id %></div>
-</p>
-
-<p>
   <strong>Players:</strong>
   <br>
 
   <table class="table" id="myTable">
-    <thead>
+    <thead class="thead-dark">
       <tr>
-        <th onclick="sortTable(0)">Name</th>
-        <th onclick="sortTable(1)">Position</th>
-        <th onclick="sortTable(2)">Projected Points</th>
-        <th onclick="sortTable(3)">Actual Points</th>
-        <th onclick="sortTable(4)">Point Differential</th>
-        <th onclick="sortTable(5)">Status</th>
+        <th onclick="sortTable(0)" scope="col">Name</th>
+        <th onclick="sortTable(1)" scope="col">Position</th>
+        <th onclick="sortTable(2)" scope="col">Projected Points</th>
+        <th onclick="sortTable(3)" scope="col">Actual Points</th>
+        <th onclick="sortTable(4)" scope="col">Point Differential</th>
+        <th onclick="sortTable(5)" scope="col">Status</th>
         <th colspan="1"></th>
       </tr>
     </thead>
