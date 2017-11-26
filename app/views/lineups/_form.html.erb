@@ -11,64 +11,64 @@
     </div>
   <% end %>
 
-  <div class="form-group modal-sm">
-    <%= form.label :name %>
+  <div class="form-group">
+    <label for="lineup_name">Name</label>
     <%= form.text_field :name, id: :lineup_name, class: 'form-control' %>
   </div>
 
-  <div class="form-group modal-sm">
-    <%= form.label :description %>
+  <div class="form-group">
+    <label for="lineup_description">Description</label>
     <%= form.text_field :description, id: :lineup_description, class: 'form-control' %>
   </div>
 
   <well>
-    <div class="form-group modal-sm">
-      <%= form.label :quarterback %>
-      Choose your quarterback: <br></br><%= form.collection_select 'players_attributes[quarterback]', Player.where(position: 'Quarterback'), :id, :name %>
+    <div class="form-group">
+      Choose your quarterback: <br></br>
+      <%= form.collection_select 'players_attributes[quarterback]', Player.where(position: 'Quarterback'), :id, :name, class: 'form-control' %>
     </div>
   </well>
 
-    <div class="form-group modal-sm">
-      <%= form.label :runningback1 %>
-      Choose your first runningback: <br></br><%= form.collection_select 'players_attributes[runningback1]', Player.where(position: 'Runningback'), :id, :name %>
+    <div class="form-group">
+      Choose your first runningback: <br></br>
+      <%= form.collection_select 'players_attributes[runningback1]', Player.where(position: 'Runningback'), :id, :name %>
     </div>
 
-    <div class="form-group modal-sm">
-      <%= form.label :runningback2 %>
-      Choose your second runningback: <br></br><%= form.collection_select 'players_attributes[runningback2]', Player.where(position: 'Runningback'), :id, :name %>
+    <div class="form-group">
+      Choose your second runningback: <br></br>
+      <%= form.collection_select 'players_attributes[runningback2]', Player.where(position: 'Runningback'), :id, :name %>
     </div>
 
-    <div class="form-group modal-sm">
-      <%= form.label :widereciever1 %>
-      Choose your first widereceiver: <br></br><%= form.collection_select 'players_attributes[widereciever1]', Player.where(position: 'Widereciever'), :id, :name %>
+    <div class="form-group">
+      Choose your first widereceiver: <br></br>
+      <%= form.collection_select 'players_attributes[widereciever1]', Player.where(position: 'Widereciever'), :id, :name %>
     </div>
 
-    <div class="form-group modal-sm">
-      <%= form.label :widereciever2 %>
-      Choose your second widereceiver: <br></br><%= form.collection_select 'players_attributes[widereciever2]', Player.where(position: 'Widereciever'), :id, :name %>
+    <div class="form-group">
+      Choose your second widereceiver: <br></br>
+      <%= form.collection_select 'players_attributes[widereciever2]', Player.where(position: 'Widereciever'), :id, :name %>
     </div>
 
-    <div class="form-group modal-sm">
-      <%= form.label :widereciever3 %>
-      Choose your third widereceiver: <br></br><%= form.collection_select 'players_attributes[widereciever3]', Player.where(position: 'Widereciever'), :id, :name %>
+    <div class="form-group">
+      Choose your third widereceiver: <br></br>
+      <%= form.collection_select 'players_attributes[widereciever3]', Player.where(position: 'Widereciever'), :id, :name %>
     </div>
 
-    <div class="form-group modal-sm">
-      <%= form.label :tightend %>
-      Choose your tightend: <br></br><%= form.collection_select 'players_attributes[tightend]', Player.where(position: 'Tightend'), :id, :name %>
+    <div class="form-group">
+      Choose your tightend: <br></br>
+      <%= form.collection_select 'players_attributes[tightend]', Player.where(position: 'Tightend'), :id, :name %>
     </div>
 
-    <div class="form-group modal-sm">
-      <%= form.label :flex %>
-      Choose your flex player: <br></br><%= form.collection_select 'players_attributes[flex]', Player.where(position: 'Widereciever'), :id, :name %>
+    <div class="form-group">
+      Choose your flex player: <br></br>
+      <%= form.collection_select 'players_attributes[flex]', Player.where(position: 'Widereciever'), :id, :name %>
     </div>
 
-    <div class="form-group modal-sm">
-      <%= form.label :defense %>
-      Choose your defense: <br></br><%= form.collection_select 'players_attributes[defense]', Player.where(position: 'Defense'), :id, :name %>
+    <div class="form-group">
+      Choose your defense: <br></br>
+      <%= form.collection_select 'players_attributes[defense]', Player.where(position: 'Defense'), :id, :name %>
     </div>
 
   <div class="actions">
-    <%= form.submit %>
+    <button type="submit" class="btn btn-primary">Submit</button>
   </div>
 <% end %>

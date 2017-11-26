@@ -12,48 +12,43 @@
   </head>
 
   <body>
-<div class="container well-lg">
 
-  <% if user_signed_in? %>
-
-  <nav class="navbar navbar-light bg-light">
-  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
-    <span class="navbar-toggler-icon"></span>
-  </button>
-    <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
-      <div class="navbar-nav">
-        <a class="nav-item nav-link" href="/users/show"> Your Account </a>
-        <a class="nav-item nav-link" href="/lineups"> All Lineups </a>
-        <a class="nav-item nav-link" href="/lineups/new"> Create Lineup </a>
-        <a class="nav-item nav-link" href="/players"> All Players </a>
-        <%= link_to("Sign Out", destroy_user_session_path, :method => 'delete') %>
-      </div>
-    </div>
-  </nav>
-
-    <% else %>
-
+    <% if user_signed_in? %>
     <nav class="navbar navbar-light bg-light">
     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>
     </button>
       <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
         <div class="navbar-nav">
-          <%= link_to("Sign Up", new_user_registration_path) %>
-          <%= link_to('Login', new_user_session_path)  %>
-          <%= link_to "Sign in with Facebook", user_facebook_omniauth_authorize_path %>
+          <a class="nav-item nav-link" href="/users/show"> Your Account </a>
+          <a class="nav-item nav-link" href="/lineups"> All Lineups </a>
+          <a class="nav-item nav-link" href="/lineups/new"> Create Lineup </a>
+          <a class="nav-item nav-link" href="/players"> All Players </a>
+          <%= link_to("Sign Out", destroy_user_session_path, :method => 'delete') %>
         </div>
       </div>
     </nav>
 
-  <%end %>
-  <%= content_tag(:div, flash[:error], :id => "flash_error", class: "alert alert-danger alert-dismissable", data: { dismiss: 'alert' }) if flash[:error] %>
-  <%= content_tag(:div, flash[:notice], :id => "flash_notice", class: "alert alert-success alert-dismissable", data: { dismiss: 'alert' }) if flash[:notice] %>
-  <%= content_tag(:div, flash[:alert], :id => "flash_alert", class: "alert alert-danger alert-dismissable", data: { dismiss: 'alert' }) if flash[:alert] %>
-
-  <%= yield %>
-</div>
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+      <% else %>
+      <nav class="navbar navbar-light bg-light">
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+        <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+          <div class="navbar-nav">
+            <%= link_to("Sign Up", new_user_registration_path) %>
+            <%= link_to('Login', new_user_session_path)  %>
+            <%= link_to "Sign in with Facebook", user_facebook_omniauth_authorize_path %>
+          </div>
+        </div>
+      </nav>
+    <%end %>
+    <%= content_tag(:div, flash[:error], :id => "flash_error", class: "alert alert-danger alert-dismissable", data: { dismiss: 'alert' }) if flash[:error] %>
+    <%= content_tag(:div, flash[:notice], :id => "flash_notice", class: "alert alert-success alert-dismissable", data: { dismiss: 'alert' }) if flash[:notice] %>
+    <%= content_tag(:div, flash[:alert], :id => "flash_alert", class: "alert alert-danger alert-dismissable", data: { dismiss: 'alert' }) if flash[:alert] %>
+    <div class="container well-lg">
+      <%= yield %>
+    </div>
     <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.3/umd/popper.min.js" integrity="sha384-vFJXuSJphROIrBnz7yo7oB41mKfc8JzQZiCq4NCceLEaO4IHwicKwpJf9c9IpFgh" crossorigin="anonymous"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/js/bootstrap.min.js" integrity="sha384-alpBpkh1PFOepccYVYDB4do5UnbKysX5WZXm3XxPqe5iKTfUKjNkCk9SaVuEZflJ" crossorigin="anonymous"></script>
