@@ -23,48 +23,48 @@
 
   <well>
     <div class="form-group">
-      Choose your quarterback: <br></br>
+      Choose your quarterback: <br>
       <%= form.collection_select 'players_attributes[quarterback]', Player.where(position: 'Quarterback'), :id, :name, class: 'form-control' %>
     </div>
   </well>
 
     <div class="form-group">
-      Choose your first runningback: <br></br>
+      Choose your first runningback: <br>
       <%= form.collection_select 'players_attributes[runningback1]', Player.where(position: 'Runningback'), :id, :name %>
     </div>
 
     <div class="form-group">
-      Choose your second runningback: <br></br>
+      Choose your second runningback: <br>
       <%= form.collection_select 'players_attributes[runningback2]', Player.where(position: 'Runningback'), :id, :name %>
     </div>
 
     <div class="form-group">
-      Choose your first widereceiver: <br></br>
+      Choose your first widereceiver: <br>
       <%= form.collection_select 'players_attributes[widereciever1]', Player.where(position: 'Widereciever'), :id, :name %>
     </div>
 
     <div class="form-group">
-      Choose your second widereceiver: <br></br>
+      Choose your second widereceiver: <br>
       <%= form.collection_select 'players_attributes[widereciever2]', Player.where(position: 'Widereciever'), :id, :name %>
     </div>
 
     <div class="form-group">
-      Choose your third widereceiver: <br></br>
+      Choose your third widereceiver: <br>
       <%= form.collection_select 'players_attributes[widereciever3]', Player.where(position: 'Widereciever'), :id, :name %>
     </div>
 
     <div class="form-group">
-      Choose your tightend: <br></br>
+      Choose your tightend: <br>
       <%= form.collection_select 'players_attributes[tightend]', Player.where(position: 'Tightend'), :id, :name %>
     </div>
 
     <div class="form-group">
-      Choose your flex player: <br></br>
+      Choose your flex player: <br>
       <%= form.collection_select 'players_attributes[flex]', Player.where(position: 'Widereciever'), :id, :name %>
     </div>
 
     <div class="form-group">
-      Choose your defense: <br></br>
+      Choose your defense: <br>
       <%= form.collection_select 'players_attributes[defense]', Player.where(position: 'Defense'), :id, :name %>
     </div>
 
