@@ -12,9 +12,10 @@
   </head>
 
   <body>
+    <div class="container well-lg">
 
     <% if user_signed_in? %>
-    <nav class="navbar navbar-light bg-light">
+    <nav class="navbar navbar-expand-sm navbar-dark bg-primary">
     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>
     </button>
@@ -24,21 +25,21 @@
           <a class="nav-item nav-link" href="/lineups"> All Lineups </a>
           <a class="nav-item nav-link" href="/lineups/new"> Create Lineup </a>
           <a class="nav-item nav-link" href="/players"> All Players </a>
-          <%= link_to("Sign Out", destroy_user_session_path, :method => 'delete') %>
+          <p class="nav-item nav-link"><%= link_to("Sign Out", destroy_user_session_path, :method => 'delete') %><p>
         </div>
       </div>
     </nav>
 
       <% else %>
-      <nav class="navbar navbar-light bg-light">
+      <nav class="navbar navbar-expand-sm navbar-dark bg-primary">
       <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
       </button>
         <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
           <div class="navbar-nav">
-            <%= link_to("Sign Up", new_user_registration_path) %>
-            <%= link_to('Login', new_user_session_path)  %>
-            <%= link_to "Sign in with Facebook", user_facebook_omniauth_authorize_path %>
+            <p class="nav-item nav-link"><%= link_to("Sign Up", new_user_registration_path) %></p>
+            <p class="nav-item nav-link"><%= link_to('Login', new_user_session_path)  %></p>
+            <p class="nav-item nav-link"><%= link_to "Sign in with Facebook", user_facebook_omniauth_authorize_path %></p>
           </div>
         </div>
       </nav>
@@ -46,7 +47,7 @@
     <%= content_tag(:div, flash[:error], :id => "flash_error", class: "alert alert-danger alert-dismissable", data: { dismiss: 'alert' }) if flash[:error] %>
     <%= content_tag(:div, flash[:notice], :id => "flash_notice", class: "alert alert-success alert-dismissable", data: { dismiss: 'alert' }) if flash[:notice] %>
     <%= content_tag(:div, flash[:alert], :id => "flash_alert", class: "alert alert-danger alert-dismissable", data: { dismiss: 'alert' }) if flash[:alert] %>
-    <div class="container well-lg">
+
       <%= yield %>
     </div>
     <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
