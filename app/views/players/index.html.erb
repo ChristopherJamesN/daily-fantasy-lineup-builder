@@ -5,8 +5,9 @@
     <tr>
       <th onclick="sortTable(0)">Name</th>
       <th onclick="sortTable(1)">Position</th>
-      <th onclick="sortTable(2)">Projected Points</th>
-      <th onclick="sortTable(3)">Actual Points</th>
+      <th onclick="sortTable(2)">Salary</th>
+      <th onclick="sortTable(3)">Projected Points</th>
+      <th onclick="sortTable(4)">Actual Points</th>
       <th colspan="1"></th>
     </tr>
   </thead>
@@ -16,6 +17,7 @@
       <tr>
         <td><%= player.name %></td>
         <td><%= player.position %></td>
+        <td><%= player.salary %></td>
         <td><%= player.projectedPoints %></td>
         <td><%= player.actualPoints %></td>
         <td><%= link_to 'Show', player %></td>
