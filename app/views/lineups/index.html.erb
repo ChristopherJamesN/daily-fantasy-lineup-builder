@@ -22,11 +22,10 @@
             <%= player.name %>
             <% end %>
         </td>
-        <td><%= link_to 'Show', lineup %></td>
+        <td><%= link_to 'View', lineup %></td>
         <% if lineup.user_id == current_user.id %>
-          <td><%= link_to 'See Players', lineup_players_path(lineup.id) %></td>
           <td><%= link_to 'Edit', edit_lineup_path(lineup) %></td>
-          <td><%= link_to 'Delete Lineup', lineup, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+          <td><%= link_to 'Delete', lineup, method: :delete, data: { confirm: 'Are you sure?' } %></td>
         <% end %>
       </tr>
     <% end %>

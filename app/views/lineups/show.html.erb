@@ -45,10 +45,6 @@
   </table>
 
   <% if @lineup.user_id == current_user.id %>
-    <br></br>
-    <%= link_to 'See Players', lineup_players_path(@lineup.id) %>
-    <br>
-    <%= link_to 'Add New Player', new_lineup_player_path(@lineup.id) %>
     <br>
     <%= link_to 'Edit Lineup', edit_lineup_path(@lineup) %>
   <% end %>
