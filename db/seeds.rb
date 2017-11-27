@@ -22,7 +22,7 @@ Player.create(name: 'Kareem Hunt', position: 'Runningback2', salary: 8000, proje
 Player.create(name: 'Julio Jones', position: 'Widereciever1', salary: 7700, projectedPoints: 18, actualPoints: 52)
 Player.create(name: 'Brandin Cooks', position: 'Widereciever1', salary: 7100, projectedPoints: 16, actualPoints: 21)
 Player.create(name: 'Sammy Watkins', position: 'Widereciever2', salary: 4900, projectedPoints: 17, actualPoints: 18)
-Player.create(name: 'AJ Green', position: 'widereciever2', salary: 8000, projectedPoints: 15, actualPoints: 9)
+Player.create(name: 'AJ Green', position: 'Widereciever2', salary: 8000, projectedPoints: 15, actualPoints: 9)
 Player.create(name: 'Cooper Kupp', position: 'Widereciever3', salary: 5000, projectedPoints: 19, actualPoints: 22)
 Player.create(name: 'Antonio Brown', position: 'Widereciever3', salary: 9500, projectedPoints: 25, actualPoints: 29)
 
