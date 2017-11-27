@@ -15,14 +15,14 @@
   <tbody>
     <% @lineups.each do |lineup| %>
       <tr>
-        <td><%= lineup.name %></td>
+        <td><%= link_to lineup.name, lineup %></td>
         <td><%= lineup.description %></td>
         <td><%= lineup.total_points %></td>
         <td><% lineup.players.each do |player| %>
             <%= player.name %>
-            <% end %>
+            <br>
+        <% end %>
         </td>
-        <td><%= link_to 'View', lineup %></td>
         <% if lineup.user_id == current_user.id %>
           <td><%= link_to 'Edit', edit_lineup_path(lineup) %></td>
           <td><%= link_to 'Delete', lineup, method: :delete, data: { confirm: 'Are you sure?' } %></td>
