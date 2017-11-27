@@ -13,8 +13,9 @@ function previousLineup() {
          + '</td><td>' + response['data']['attributes']['lineups-players'][i]['player_starting'] + '</td></tr>'
        }
 
-       $("#name").html(response.data.attributes.name)
-       $("#description").html(response.data.attributes.description)
+       $("#name").html('<strong class="col-sm-4">Name:</strong>' + response.data.attributes.name)
+       $("#description").html('<strong class="col-sm-4">Description:</strong>' + response.data.attributes.description)
+       $("#total_points").html('<strong class="col-sm-4">Total Points:</strong>' )
        $("#user").html(response.data.attributes.user.id)
        $("#next").attr('data-id', response.data.id)
        $("#previous").attr('data-id', response.data.id)
