@@ -1,30 +1,30 @@
-<p>
-  <strong>Name:</strong>
+<p class="col-sm-10 row">
+  <strong class="col-sm-3 row">Name:</strong>
   <%= @player.name %>
 </p>
 
-<p>
-  <strong>Position:</strong>
+<p class="col-sm-10 row">
+  <strong class="col-sm-3 row">Position:</strong>
   <%= @player.position %>
 </p>
 
-<p>
-  <strong>Salary:</strong>
+<p class="col-sm-10 row">
+  <strong class="col-sm-3 row">Salary:</strong>
   <%= @player.salary %>
 </p>
 
-<p>
-  <strong>Projected Points:</strong>
+<p class="col-sm-10 row">
+  <strong class="col-sm-3 row">Projected Points:</strong>
   <%= @player.projectedPoints %>
 </p>
 
-<p>
-  <strong>Actual Points:</strong>
+<p class="col-sm-10 row">
+  <strong class="col-sm-3 row">Actual Points:</strong>
   <%= @player.actualPoints %>
 </p>
 
-<p>
-  <strong>Lineups:</strong>
+<p class="col-sm-10 row">
+  <strong class="col-sm-3 row">Lineups:</strong>
   <br>
   <% @player.lineups.each do |lineup| %>
     <% if lineup.user_id == current_user.id %>
