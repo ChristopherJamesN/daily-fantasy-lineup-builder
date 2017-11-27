@@ -1,6 +1,4 @@
-<div class="container">
-
-  <button id="previous" data-id="<%= @lineup.id %>" onclick="previousLineup()" type="button" class="btn btn-primary">Show Previous Lineup</button>
+<button id="previous" data-id="<%= @lineup.id %>" onclick="previousLineup()" type="button" class="btn btn-primary">Show Previous Lineup</button>
   <button id="next" data-id="<%= @lineup.id %>" onclick="nextLineup()" type="button" class="btn btn-primary">Show Next Lineup</button>
   <br></br>
 
@@ -45,8 +43,6 @@
     <br>
     <%= link_to 'Edit Lineup', edit_lineup_path(@lineup) %>
   <% end %>
-
-</div>
 
 <script>
 
