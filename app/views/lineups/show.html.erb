@@ -3,15 +3,15 @@
   <button id="previous" data-id="<%= @lineup.id %>" onclick="previousLineup()" type="button" class="btn btn-primary">Show Previous Lineup</button>
   <button id="next" data-id="<%= @lineup.id %>" onclick="nextLineup()" type="button" class="btn btn-primary">Show Next Lineup</button>
   <br></br>
-<p>
-  <strong>Name:</strong>
-  <div id="name"><%= @lineup.name %></div>
+
+<p class="col-sm-10 row">
+  <div id="name"><strong class="col-sm-4">Name:</strong> <%= @lineup.name %></div>
 </p>
 
-<p>
-  <strong>Description:</strong>
-  <div id="description"><%= @lineup.description %></div>
+<p class="col-sm-10 row">
+  <div id="description"><strong class="col-sm-4">Description:</strong><%= @lineup.description %></div>
 </p>
+
 
 
   <table class="table" id="myTable">
