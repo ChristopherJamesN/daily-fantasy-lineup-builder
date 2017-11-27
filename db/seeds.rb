@@ -13,17 +13,23 @@ Player.create(name: 'Marcus Mariota', position: 'Quarterback', salary: 6300, pro
 Player.create(name: 'Matt Ryan', position: 'Quarterback', salary: 6400, projectedPoints: 21, actualPoints: 15)
 
 #Runningbacks
-Player.create(name: 'Tevin Coleman', position: 'Runningback', salary: 6500, projectedPoints: 24, actualPoints: 21)
-Player.create(name: 'Mark Ingram', position: 'Runningback', salary: 8300, projectedPoints: 21, actualPoints: 6)
-Player.create(name: 'Todd Gurley', position: 'Runningback', salary: 8800, projectedPoints: 22, actualPoints: 16)
-Player.create(name: 'Kareem Hunt', position: 'Runningback', salary: 8000, projectedPoints: 29, actualPoints: 4)
+Player.create(name: 'Tevin Coleman', position: 'Runningback1', salary: 6500, projectedPoints: 24, actualPoints: 21)
+Player.create(name: 'Mark Ingram', position: 'Runningback1', salary: 8300, projectedPoints: 21, actualPoints: 6)
+Player.create(name: 'Todd Gurley', position: 'Runningback2', salary: 8800, projectedPoints: 22, actualPoints: 16)
+Player.create(name: 'Kareem Hunt', position: 'Runningback2', salary: 8000, projectedPoints: 29, actualPoints: 4)
 
 #Widerecievers
-Player.create(name: 'Julio Jones', position: 'Widereciever', salary: 7700, projectedPoints: 18, actualPoints: 52)
-Player.create(name: 'Brandin Cooks', position: 'Widereciever', salary: 7100, projectedPoints: 16, actualPoints: 21)
-Player.create(name: 'Sammy Watkins', position: 'Widereciever', salary: 4900, projectedPoints: 17, actualPoints: 18)
-Player.create(name: 'AJ Green', position: 'Widereciever', salary: 8000, projectedPoints: 15, actualPoints: 9)
-Player.create(name: 'Cooper Kupp', position: 'Widereciever', salary: 5000, projectedPoints: 19, actualPoints: 22)
+Player.create(name: 'Julio Jones', position: 'Widereciever1', salary: 7700, projectedPoints: 18, actualPoints: 52)
+Player.create(name: 'Brandin Cooks', position: 'Widereciever1', salary: 7100, projectedPoints: 16, actualPoints: 21)
+Player.create(name: 'Sammy Watkins', position: 'Widereciever2', salary: 4900, projectedPoints: 17, actualPoints: 18)
+Player.create(name: 'AJ Green', position: 'widereciever2', salary: 8000, projectedPoints: 15, actualPoints: 9)
+Player.create(name: 'Cooper Kupp', position: 'Widereciever3', salary: 5000, projectedPoints: 19, actualPoints: 22)
+Player.create(name: 'Antonio Brown', position: 'Widereciever3', salary: 9500, projectedPoints: 25, actualPoints: 29)
+
+#Flex
+Player.create(name: 'LeSean McCoy', position: 'Flex', salary: 8100, projectedPoints: 17, actualPoints: 21)
+Player.create(name: 'Rob Gronkowski', position: 'Flex', salary: 7800, projectedPoints: 14, actualPoints: 18)
+Player.create(name: 'Randall Cobb', position: 'Flex', salary: 4200, projectedPoints: 7, actualPoints: 10)
 
 #Tightends
 Player.create(name: 'Jack Doyle', position: 'Tightend', salary: 4500, projectedPoints: 14, actualPoints: 16)
