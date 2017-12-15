@@ -1,5 +1,6 @@
 class Lineup < ApplicationRecord
   validates :name, presence: true
+
   belongs_to :user
   has_many :lineups_players
   has_many :players, through: :lineups_players
