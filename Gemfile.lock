@@ -159,7 +159,7 @@ GEM
       digest
       net-protocol
       timeout
-    nio4r (2.5.8)
+    nio4r (2.5.9)
     nokogiri (1.14.3-arm64-darwin)
       racc (~> 1.4)
     nokogiri (1.14.3-x86_64-linux)
@@ -183,7 +183,7 @@ GEM
     orm_adapter (0.5.0)
     pg (1.4.1)
     public_suffix (4.0.7)
-    puma (4.3.12)
+    puma (5.6.7)
       nio4r (~> 2.0)
     racc (1.6.2)
     rack (2.2.6.4)
@@ -309,7 +309,7 @@ DEPENDENCIES
   omniauth
   omniauth-facebook
   pg
-  puma (~> 4.3)
+  puma (~> 5.6)
   rails (~> 7.0.3)
   rails_12factor
   sass-rails (~> 5.0)
