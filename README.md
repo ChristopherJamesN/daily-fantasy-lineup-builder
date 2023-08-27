@@ -9,7 +9,7 @@ To test out this application locally, fork and clone the repo.
 
 ## Usage
 
-Run `bundle install` , `rake db:migrate` , `rails s` , and navigate to the appropriate location in your browser to interact with the application.
+Run `bundle install` , `rake db:create` , `rake db:migrate` , `rake db:seed` , `rails s` , and navigate to the appropriate location in your browser to interact with the application.
 
 ## Contributing
 
