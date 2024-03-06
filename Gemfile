@@ -18,7 +18,7 @@ gem "sprockets-es6"
 
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
-gem 'rails', '~> 7.0.3'
+gem 'rails', '~> 7.0.8'
 # Use Puma as the app server
 gem 'puma', '~> 5.6'
 # Use SCSS for stylesheets
